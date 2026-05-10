@@ -64,6 +64,8 @@
   \par\vspace{2pt}}
 \newcommand{\ec}[1]{{\setlength\fboxsep{1.5pt}\colorbox{green!35}{\ensuremath{#1}}}}
 \newcommand{\icc}[1]{{\setlength\fboxsep{1.5pt}\colorbox{violet!25}{\ensuremath{#1}}}}
+\newcommand{\efc}[1]{{\setlength\fboxsep{1.5pt}\colorbox{orange!40}{\ensuremath{#1}}}}
+\newcommand{\bfc}[1]{{\setlength\fboxsep{1.5pt}\colorbox{cyan!35}{\ensuremath{#1}}}}
 
 % ---------- Page style ----------
 \pagestyle{plain}
@@ -364,36 +366,51 @@ Gesamtenergie: $\boxed{\ec{\mathcal{W}}=\dfrac{1}{4\pi\varepsilon_0}\dfrac{1}{2}
 
 \subsection{Das elektrische Feld}
 
-Punktladung: $\boxed{\vec{E}(\vec{r})=\dfrac{1}{4\pi\varepsilon_0}\dfrac{q}{r^2}\hat{r}}$
+Punktladung: $\boxed{\efc{\vec{E}}(\vec{r})=\dfrac{1}{4\pi\varepsilon_0}\dfrac{q}{r^2}\hat{r}}$
 
-Diskret: $\boxed{\vec{E}(\vec{r}_0)=\dfrac{1}{4\pi\varepsilon_0}\sum_{i=1}^n\dfrac{q_i}{r_{0i}^2}\hat{r}_{0i}}$ \quad $\vec{F}=q\vec{E}$
+Diskret: $\boxed{\efc{\vec{E}}(\vec{r}_0)=\dfrac{1}{4\pi\varepsilon_0}\sum_{i=1}^n\dfrac{q_i}{r_{0i}^2}\hat{r}_{0i}}$ \quad $\vec{F}=q\efc{\vec{E}}$
 
-Kontinuierlich: $\boxed{\vec{E}(\vec{r})=\dfrac{1}{4\pi\varepsilon_0}\int_{\mathbb{R}^3}\dfrac{\rho(\vec{r}')}{|\vec{r}-\vec{r}'|^3}(\vec{r}-\vec{r}')\,d^3r'}$
+Kontinuierlich: $\boxed{\efc{\vec{E}}(\vec{r})=\dfrac{1}{4\pi\varepsilon_0}\int_{\mathbb{R}^3}\dfrac{\rho(\vec{r}')}{|\vec{r}-\vec{r}'|^3}(\vec{r}-\vec{r}')\,d^3r'}$
 
-pot. Energie: $\ec{E_{\text{pot}}}=|q||E||d|=|q||V|$ \quad $E=V/d$
+pot. Energie: $\ec{E_{\text{pot}}}=|q||\efc{E}||d|=|q||V|$ \quad $\efc{E}=V/d$
 
 Kraft: $F=-\nabla \ec{E_{\text{pot}}}$
 
 \textbf{Kugel homogener Ladungsdichte:}
-$E(r)=\begin{cases}\dfrac{\rho R^3}{3r^2\varepsilon_0} & r>R\\ \dfrac{\rho r}{3\varepsilon_0} & r<R\end{cases}$ (Elektrisches Feld)
+$\efc{E}(r)=\begin{cases}\dfrac{\rho R^3}{3r^2\varepsilon_0} & r>R\\ \dfrac{\rho r}{3\varepsilon_0} & r<R\end{cases}$ (Elektrisches Feld)
 
 \subsection{Gesetz von Gauss}
 
-$\boxed{\Phi=\oint_{\partial V}\vec{E}\cdot d\vec{a}=\dfrac{1}{\varepsilon_0}\int_V\rho\,dV=\dfrac{q_{\text{eingeschlossen}}}{\varepsilon_0}}$
+$\boxed{\Phi=\oint_{\partial V}\efc{\vec{E}}\cdot d\vec{a}=\dfrac{1}{\varepsilon_0}\int_V\rho\,dV=\dfrac{q_{\text{eingeschlossen}}}{\varepsilon_0}}$
 
-wähle Fläche senkrecht zu $\vec{E}$; \; $\vec{E}\perp d\vec{a}$: $\vec{E}\cdot d\vec{a}=0$
+wähle Fläche senkrecht zu $\efc{\vec{E}}$; \; $\efc{\vec{E}}\perp d\vec{a}$: $\efc{\vec{E}}\cdot d\vec{a}=0$
+
+\textbf{Symmetrien} (Gaussfläche $\perp\efc{\vec{E}}$, $\efc{E}=\text{konst.}$):
+\par
+{\footnotesize\renewcommand{\arraystretch}{1.1}
+\begin{tabularx}{\linewidth}{|l|X|}
+\hline
+\textbf{Geometrie} & \textbf{Ergebnis} \\
+\hline
+Kugel (Pkt./Schale, aussen) & $\efc{E}=\tfrac{q}{4\pi\varepsilon_0 r^2}$ \\
+Vollkugel innen ($\rho$) & $\efc{E}=\tfrac{\rho r}{3\varepsilon_0}$ \\
+$\infty$ Zylinder ($\lambda$ C/m) & $\efc{E}=\tfrac{\lambda}{2\pi\varepsilon_0 r}$ \\
+$\infty$ Platte ($\sigma$ C/m$^2$) & $\efc{E}=\tfrac{\sigma}{2\varepsilon_0}$ \\
+Kondensator ($\pm\sigma$, innen) & $\efc{E}=\tfrac{\sigma}{\varepsilon_0}$ \\
+\hline
+\end{tabularx}}
 
 \subsection{Energie des elektrischen Feldes}
 
-Energiedichte: $\boxed{\ec{u}=\dfrac{\varepsilon_0}{2}E^2}$ \quad Gesamtenergie: $\boxed{\ec{U}=\int_V\dfrac{\varepsilon_0}{2}E^2\,dV}$
+Energiedichte: $\boxed{\ec{u}=\dfrac{\varepsilon_0}{2}\efc{E}^2}$ \quad Gesamtenergie: $\boxed{\ec{U}=\int_V\dfrac{\varepsilon_0}{2}\efc{E}^2\,dV}$
 
 \subsection{Das elektrische Potential}
 
-Spannung: $\boxed{V=\varphi=-\int_{r_0}^{r_1}\vec{E}(\vec{r})\,dr}$
+Spannung: $\boxed{V=\varphi=-\int_{r_0}^{r_1}\efc{\vec{E}}(\vec{r})\,dr}$
 
-Potentialdifferenz: $\varphi_{BA}=\varphi(A)-\varphi(B)=-\int_A^B\vec{E}\,ds$
+Potentialdifferenz: $\varphi_{BA}=\varphi(A)-\varphi(B)=-\int_A^B\efc{\vec{E}}\,ds$
 
-$\varphi(r)=-\int_\infty^r E(r')\,dr'+\varphi(\infty)$ \quad $\boxed{\vec{E}=-\nabla\varphi}$
+$\varphi(r)=-\int_\infty^r \efc{E}(r')\,dr'+\varphi(\infty)$ \quad $\boxed{\efc{\vec{E}}=-\nabla\varphi}$
 
 $W_{BA}=\varphi_{BA}q$
 
@@ -412,17 +429,17 @@ Poisson-Gleichung: $\boxed{\Delta\varphi=-\dfrac{\rho}{\varepsilon_0}}$ \quad $\
 
 \subsection{Elektrische Leiter}
 
-$\vec{E}=0$ im Inneren $\Rightarrow\boxed{\dfrac{Q(v)}{\varepsilon_0}=0}$
+$\efc{\vec{E}}=0$ im Inneren $\Rightarrow\boxed{\dfrac{Q(v)}{\varepsilon_0}=0}$
 
 $\varphi=\text{konst.}$ im Inneren; Oberfläche ist Äquipotentialfläche.
 
-$\boxed{\vec{E}=\dfrac{\sigma}{\varepsilon_0}\hat{n}}$ \quad $\sigma=Q/A$
+$\boxed{\efc{\vec{E}}=\dfrac{\sigma}{\varepsilon_0}\hat{n}}$ \quad $\sigma=Q/A$
 
 \subsection{Spiegelladungen}
 
-Feld $xy$-Ebene: $\boxed{E_z=\dfrac{-qh}{2\pi\varepsilon_0(r^2+h^2)^{3/2}}}$
+Feld $xy$-Ebene: $\boxed{\efc{E_z}=\dfrac{-qh}{2\pi\varepsilon_0(r^2+h^2)^{3/2}}}$
 
-Ladungsdichte: $\boxed{\sigma=\varepsilon_0 E_z=\dfrac{-qh}{2\pi(r^2+h^2)^{3/2}}}$
+Ladungsdichte: $\boxed{\sigma=\varepsilon_0 \efc{E_z}=\dfrac{-qh}{2\pi(r^2+h^2)^{3/2}}}$
 
 \subsection{Dipole}
 
@@ -430,19 +447,19 @@ El. Potential: $\boxed{\varphi(r,\theta)=\dfrac{1}{4\pi\varepsilon_0}\dfrac{p}{r
 
 Dipolmoment: $\boxed{\vec{p}=q\vec{l}}$ \quad $\vec{l}$: Abstandsvektor der Ladungen
 
-Kraft auf Dipol: $\boxed{\vec{F}=(\vec{p}\cdot\nabla)\vec{E}}$
+Kraft auf Dipol: $\boxed{\vec{F}=(\vec{p}\cdot\nabla)\efc{\vec{E}}}$
 
-Drehmoment: $\boxed{\vec{M}=\vec{p}\times\vec{E}}$
+Drehmoment: $\boxed{\vec{M}=\vec{p}\times\efc{\vec{E}}}$
 
 \subsection{Kondensatoren}
 
 Kapazität: $\boxed{Q=C\varphi=CV}$
 
-Plattenkondensator: $\boxed{E=\dfrac{V}{d}=\dfrac{Q}{\varepsilon_0 A}}$ \quad $\boxed{C=\dfrac{A\varepsilon_0}{d}}$
+Plattenkondensator: $\boxed{\efc{E}=\dfrac{V}{d}=\dfrac{Q}{\varepsilon_0 A}}$ \quad $\boxed{C=\dfrac{A\varepsilon_0}{d}}$
 
 Gespeicherte Energie: $\boxed{\ec{W}=\dfrac{Q^2}{2C}=\dfrac{CV^2}{2}=\dfrac{QV}{2}}$ \quad $\Delta \ec{W}_{\text{Batt}}=\Delta QV$
 
-Energiedichte: $\boxed{\ec{w_E}=\dfrac{1}{2\varepsilon_0}E^2}$
+Energiedichte: $\boxed{\ec{w_E}=\dfrac{1}{2\varepsilon_0}\efc{E}^2}$
 
 Parallelschaltung: $\boxed{C_{\text{ges}}=\sum_i C_i}$ \quad Serienschaltung: $\boxed{C_{\text{ges}}=\dfrac{1}{\sum_i 1/C_i}}$
 
@@ -465,7 +482,7 @@ Kontinuitätsgleichung: $\boxed{\nabla\cdot\vec{J}=-\dfrac{d\rho}{dt}}$ \quad $\
 
 \subsection{Das Ohm'sche Gesetz}
 
-Allgemein: $\boxed{\vec{J}=\sigma\vec{E}}$ \quad $\sigma$: Leitfähigkeit
+Allgemein: $\boxed{\vec{J}=\sigma\efc{\vec{E}}}$ \quad $\sigma$: Leitfähigkeit
 
 Widerstand: $\boxed{R=\dfrac{V}{\icc{I}}=\int_{r_1}^{r_2}\dfrac{dr}{\sigma A(r)}}$
 
@@ -489,6 +506,19 @@ $Q(t)=Q_0 e^{-t/RC}$ \quad Ladestrom: $\icc{I(t)}=\dfrac{V_0}{R}e^{-t/RC}$
 \section{Einführung in die Relativitätstheorie}
 
 \chbox{Lichtgeschwindigkeit: $c\approx3\cdot10^8\,\text{m/s}$}
+
+\par
+{\footnotesize\renewcommand{\arraystretch}{1.1}
+\begin{tabularx}{\linewidth}{|l|X|X|}
+\hline
+\textbf{Grösse} & \textbf{$(\cdot)'$ moving} & \textbf{$(\cdot)$ stationary} \\
+\hline
+Zeit & $\Delta t'$ = Eigenzeit (kürzer) & $\Delta t$ = im Labor \\
+Länge & $l'$ = Eigenlänge (länger) & $l$ = kontrahiert \\
+Position & $x',y',z',t'$ & $x,y,z,t$ \\
+Energie/Impuls & $E',p'$ & $E,p$ \\
+\hline
+\end{tabularx}}
 
 Zeitdilatation: $\boxed{\Delta t=\gamma\Delta t'}$ \quad $\Delta t'$ geht langsamer
 
@@ -553,99 +583,112 @@ $\dfrac{f_1}{f_2}=\dfrac{\lambda_2}{\lambda_1}$
 
 \subsection{Magnetische Kräfte}
 
-Lorentz-Kraft: $\boxed{\vec{F}=q\vec{E}+q(\vec{v}\times\vec{B})}$
+Lorentz-Kraft: $\boxed{\vec{F}=q\efc{\vec{E}}+q(\vec{v}\times\bfc{\vec{B}})}$
 
-Stromdurchflossener Leiter: $\boxed{\vec{F}_L=\icc{I}(\vec{\ell}\times\vec{B})}$
+Stromdurchflossener Leiter: $\boxed{\vec{F}_L=\icc{I}(\vec{\ell}\times\bfc{\vec{B}})}$
 
-Ampersches Gesetz: $\boxed{\mu_0 \icc{I}=\oint_{\partial A}\vec{B}\,ds}$
+Ampersches Gesetz: $\boxed{\mu_0 \icc{I}=\oint_{\partial A}\bfc{\vec{B}}\,ds}$
 
 \bhbox{\textbf{Ladungsinvarianz:} $Q$ Lorentz-Skalar, relativistisch invariant, $Q=Q'$}
 
 \subsection{Transformation elektrischer Felder}
 
-$K'$ bewegt: $\boxed{E'_\parallel=E_\parallel}$ \quad $\boxed{E'_\perp=\gamma E_\perp}$
+$K'$ bewegt: $\boxed{\efc{E'_\parallel}=\efc{E_\parallel}}$ \quad $\boxed{\efc{E'_\perp}=\gamma \efc{E_\perp}}$
 
 Felder bewegter Ladungen ($K'$ mit Relativgeschwindigkeit $-v_x$):
 \[
-  E'=\dfrac{q}{4\pi\varepsilon_0 r'^2}\dfrac{1-\beta^2}{(1-\beta^2\sin^2\theta')^{3/2}}
+  \efc{E'}=\dfrac{q}{4\pi\varepsilon_0 r'^2}\dfrac{1-\beta^2}{(1-\beta^2\sin^2\theta')^{3/2}}
 \]
 
 Lamorleistung: $P=\dfrac{q^2 a^2}{6\pi\varepsilon_0 c^3}$ \quad $a$: Beschleunigung
 
 \subsection{Kräfte auf bewegte Ladungen}
 
-$K'$ bewegtes System: $\boxed{F'_\parallel=qE_\parallel}$ \quad $\boxed{F'_\perp=q\gamma E_\perp}$
+$K'$ bewegtes System: $\boxed{F'_\parallel=q\efc{E_\parallel}}$ \quad $\boxed{F'_\perp=q\gamma \efc{E_\perp}}$
 
-$K$ Labor: $F_\parallel=qE_\parallel$ \quad $F_\perp=\dfrac{1}{\gamma}F'_\perp=qE_\perp$
+$K$ Labor: $F_\parallel=q\efc{E_\parallel}$ \quad $F_\perp=\dfrac{1}{\gamma}F'_\perp=q\efc{E_\perp}$
 
 \subsection{Wechselwirkungen zwischen bewegten Ladungen}
 
-$F_y=\dfrac{qI}{2\pi\varepsilon_0 c^2}\dfrac{v}{d}$ \quad Magnetisches Feld: $\boxed{B=\dfrac{\icc{I}}{2\pi\varepsilon_0 c^2 d}}$
+$F_y=\dfrac{qI}{2\pi\varepsilon_0 c^2}\dfrac{v}{d}$ \quad Magnetisches Feld: $\boxed{\bfc{B}=\dfrac{\icc{I}}{2\pi\varepsilon_0 c^2 d}}$
 
 % ============================================================
 \section{Magnetische Felder}
 
 \chbox{$\mu_0=\dfrac{1}{\varepsilon_0 c^2}=4\pi\times10^{-7}\,\text{N\,A}^{-2}$}
 
-Magn. Feld unendl. langer Draht: $\boxed{B=\mu_0\dfrac{\icc{I}}{2\pi r}}$ \quad $\boxed{\vec{B}=\dfrac{\vec{k}}{\omega}\times\vec{E}}$
+Magn. Feld unendl. langer Draht: $\boxed{\bfc{B}=\mu_0\dfrac{\icc{I}}{2\pi r}}$ \quad $\boxed{\bfc{\vec{B}}=\dfrac{\vec{k}}{\omega}\times\efc{\vec{E}}}$
 
-Magnetfeld Zylinderspule: $\boxed{B=\mu_0\dfrac{N}{L}\icc{I}}$ \quad $N$: Gesamtwindungen, $L$: Länge
+Magnetfeld Zylinderspule: $\boxed{\bfc{B}=\mu_0\dfrac{N}{L}\icc{I}}$ \quad $N$: Gesamtwindungen, $L$: Länge
 
 \subsection{Ampere'sches Gesetz}
 
-$\boxed{\oint_{\partial A}\vec{B}\,ds=\mu_0 \icc{I_{\text{eing}}}=\mu_0\int_A\vec{J}\,d\vec{a}}$ \quad wähle Weg parallel zu $\vec{B}$
+$\boxed{\oint_{\partial A}\bfc{\vec{B}}\,ds=\mu_0 \icc{I_{\text{eing}}}=\mu_0\int_A\vec{J}\,d\vec{a}}$ \quad wähle Weg parallel zu $\bfc{\vec{B}}$
 
-$\boxed{\nabla\times\vec{B}=\mu_0\vec{J}}$ \quad 2. Maxwell: $\boxed{\nabla\cdot\vec{B}=0}$
+\textbf{Symmetrien} (Amperekurve $\parallel\bfc{\vec{B}}$, $\bfc{B}=\text{konst.}$):
+\par
+{\footnotesize\renewcommand{\arraystretch}{1.1}
+\begin{tabularx}{\linewidth}{|l|X|}
+\hline
+\textbf{Geometrie} & \textbf{Ergebnis} \\
+\hline
+Gerader Draht & $\bfc{B}=\tfrac{\mu_0\icc{I}}{2\pi r}$ \\
+Solenoid ($n$ Wdg/m) & $\bfc{B}=\mu_0 n\icc{I}$ (innen), $0$ (aussen) \\
+Toroid ($N$ Wdg) & $\bfc{B}=\tfrac{\mu_0 N\icc{I}}{2\pi r}$ (innen), $0$ (aussen) \\
+\hline
+\end{tabularx}}
+
+$\boxed{\nabla\times\bfc{\vec{B}}=\mu_0\vec{J}}$ \quad 2. Maxwell: $\boxed{\nabla\cdot\bfc{\vec{B}}=0}$
 
 \subsection{Das Vektorpotential}
 
-$\boxed{\vec{B}=\nabla\times\vec{A}}$
+$\boxed{\bfc{\vec{B}}=\nabla\times\vec{A}}$
 
 $\boxed{\vec{A}(\vec{r})=\dfrac{\mu_0}{4\pi}\int_{\mathbb{R}^3}\dfrac{\vec{J}(\vec{r}')}{|\vec{r}-\vec{r}'|}dx'dy'dz'}$
 
 \subsection{Das Biot-Savart'sche Gesetz}
 
-$\boxed{d\vec{B}=\dfrac{\mu_0 \icc{I}}{4\pi r^2}(d\vec{l}\times\hat{r})=\dfrac{\mu_0 \icc{I}}{4\pi r^3}|d\vec{l}\times\vec{r}|}$
+$\boxed{d\bfc{\vec{B}}=\dfrac{\mu_0 \icc{I}}{4\pi r^2}(d\vec{l}\times\hat{r})=\dfrac{\mu_0 \icc{I}}{4\pi r^3}|d\vec{l}\times\vec{r}|}$
 
-für Punktladung $q$: $\boxed{\vec{B}=\dfrac{\mu_0 q}{4\pi r^2}(\vec{v}\times\hat{r})}$
+für Punktladung $q$: $\boxed{\bfc{\vec{B}}=\dfrac{\mu_0 q}{4\pi r^2}(\vec{v}\times\hat{r})}$
 
-Magnetfeld unendlicher Spule: $\boxed{B_z=\mu_0 nI}$
+Magnetfeld unendlicher Spule: $\boxed{\bfc{B_z}=\mu_0 nI}$
 
 Kreisförmiger Leiter auf $z$-Achse:
-$B_z(0,0,z)=\dfrac{\mu_0 R^2 I}{2(R^2+z^2)^{3/2}}$ \quad insbes.: $B_z(0,0,0)=\dfrac{\mu_0 \icc{I}}{2R}$
+$\bfc{B_z}(0,0,z)=\dfrac{\mu_0 R^2 I}{2(R^2+z^2)^{3/2}}$ \quad insbes.: $\bfc{B_z}(0,0,0)=\dfrac{\mu_0 \icc{I}}{2R}$
 
-Unendlich langer dünner Leiter: $B=\mu_0\dfrac{\icc{I}}{2\pi R}$
+Unendlich langer dünner Leiter: $\bfc{B}=\mu_0\dfrac{\icc{I}}{2\pi R}$
 
 \subsection{Energiedichte des magnetischen Feldes}
 
-$\boxed{u_B=\dfrac{B^2}{2\mu_0}}$
+$\boxed{u_B=\dfrac{\bfc{B}^2}{2\mu_0}}$
 
 \subsection{Hall Effekt}
 
-El. Hall-Feld: $\boxed{E_H=\dfrac{U_H}{d}}$ \quad Hall Spannung: $\boxed{U_H=E_H d=\bar{v}Bd}$
+El. Hall-Feld: $\boxed{\efc{E_H}=\dfrac{U_H}{d}}$ \quad Hall Spannung: $\boxed{U_H=\efc{E_H} d=\bar{v}\bfc{B}d}$
 
 \subsection{Relativistische Transformationen}
 
-$\boxed{E'_\parallel=E_\parallel}$ \quad $\boxed{E'_\perp=\gamma(E_\perp+c\vec{\beta}\times\vec{B}_\perp)}$
+$\boxed{\efc{E'_\parallel}=\efc{E_\parallel}}$ \quad $\boxed{\efc{E'_\perp}=\gamma(\efc{E_\perp}+c\vec{\beta}\times\bfc{\vec{B}_\perp})}$
 
-$\boxed{B'_\parallel=B_\parallel}$ \quad $\boxed{B'_\perp=\gamma\!\left(B_\perp-\tfrac{1}{c}\vec{\beta}\times\vec{E}_\perp\right)}$
+$\boxed{\bfc{B'_\parallel}=\bfc{B_\parallel}}$ \quad $\boxed{\bfc{B'_\perp}=\gamma\!\left(\bfc{B_\perp}-\tfrac{1}{c}\vec{\beta}\times\efc{\vec{E}_\perp}\right)}$
 
 % ============================================================
 \section{Magnetische Induktion}
 
 \subsection{Faraday'sches Gesetz}
 
-Isolierter Leiter: $\boxed{\vec{E}_{\text{int}}=-\vec{v}\times\vec{B}}$
+Isolierter Leiter: $\boxed{\efc{\vec{E}_{\text{int}}}=-\vec{v}\times\bfc{\vec{B}}}$
 
-Magnetischer Fluss: $\boxed{\Phi(t)=\int_A\vec{B}\cdot d\vec{a}}$
+Magnetischer Fluss: $\boxed{\Phi(t)=\int_A\bfc{\vec{B}}\cdot d\vec{a}}$
 
-Induzierte Spannung: $\boxed{\varepsilon=-\frac{d\Phi}{dt}=\oint_C\vec{E}\cdot d\vec{L}=-\frac{d}{dt}\int_A\vec{B}\cdot d\vec{a}}$
+Induzierte Spannung: $\boxed{\varepsilon=-\frac{d\Phi}{dt}=\oint_C\efc{\vec{E}}\cdot d\vec{L}=-\frac{d}{dt}\int_A\bfc{\vec{B}}\cdot d\vec{a}}$
 
 Induzierter Strom: $\boxed{\icc{I_{\text{ind}}}=\dfrac{U_{\text{ind}}}{R}=\dfrac{\varepsilon}{R}=-\dfrac{1}{R}\dfrac{d\Phi}{dt}}$
 
 $\Phi$: Magnetischer Fluss, $\varepsilon$: elektromotorische Kraft $\approx$ Spannung
 
-fallende Leiterschleife: $\boxed{F=\icc{I_{\text{ind}}}aB}$ \quad $a$: Seitenlänge
+fallende Leiterschleife: $\boxed{F=\icc{I_{\text{ind}}}a\bfc{B}}$ \quad $a$: Seitenlänge
 
 \subsection{Lenz'sche Gesetz}
 
@@ -764,29 +807,29 @@ $\boxed{\dfrac{\icc{I_P}}{\icc{I_S}}\approx\pm\dfrac{N_2}{N_1}\approx\dfrac{\hat
 \hline
 Nabla-Form & Integralform \\
 \hline
-$\nabla\cdot\vec{E}=\frac{\rho}{\varepsilon_0}$ & $\int_{\partial V}\vec{E}\cdot d\vec{a}=\frac{Q_{\text{in}}}{\varepsilon_0}$ \\
-$\nabla\cdot\vec{B}=0$ & $\int_{\partial V}\vec{B}\cdot d\vec{a}=0$ \\
-$\nabla\times\vec{E}=-\frac{\partial\vec{B}}{\partial t}$ & $\oint\vec{E}\cdot d\vec{s}=-\frac{\partial}{\partial t}\int_V\vec{B}\cdot d\vec{a}$ \\
-$\nabla\times\vec{B}=\mu_0\vec{J}+\mu_0\varepsilon_0\frac{\partial\vec{E}}{\partial t}$ & $\oint\vec{B}\cdot d\vec{s}=\mu_0 \icc{I_{\text{eing}}}+\mu_0\varepsilon_0\frac{\partial}{\partial t}\int_V\vec{E}\cdot d\vec{a}$ \\
+$\nabla\cdot\efc{\vec{E}}=\frac{\rho}{\varepsilon_0}$ & $\int_{\partial V}\efc{\vec{E}}\cdot d\vec{a}=\frac{Q_{\text{in}}}{\varepsilon_0}$ \\
+$\nabla\cdot\bfc{\vec{B}}=0$ & $\int_{\partial V}\bfc{\vec{B}}\cdot d\vec{a}=0$ \\
+$\nabla\times\efc{\vec{E}}=-\frac{\partial\bfc{\vec{B}}}{\partial t}$ & $\oint\efc{\vec{E}}\cdot d\vec{s}=-\frac{\partial}{\partial t}\int_V\bfc{\vec{B}}\cdot d\vec{a}$ \\
+$\nabla\times\bfc{\vec{B}}=\mu_0\vec{J}+\mu_0\varepsilon_0\frac{\partial\efc{\vec{E}}}{\partial t}$ & $\oint\bfc{\vec{B}}\cdot d\vec{s}=\mu_0 \icc{I_{\text{eing}}}+\mu_0\varepsilon_0\frac{\partial}{\partial t}\int_V\efc{\vec{E}}\cdot d\vec{a}$ \\
 $\nabla\cdot\vec{J}=-\frac{\partial\rho}{\partial t}$ & Kontinuitätsgleichung \\
 \hline
 \end{tabularx}}
 
-falls $\vec{J}=0$: $\boxed{\nabla\times\vec{B}=\dfrac{1}{c^2}\dfrac{\partial\vec{E}}{\partial t}}$
+falls $\vec{J}=0$: $\boxed{\nabla\times\bfc{\vec{B}}=\dfrac{1}{c^2}\dfrac{\partial\efc{\vec{E}}}{\partial t}}$
 
-Verschiebungsstrom: $\boxed{\icc{I_V}=\int\varepsilon_0\dfrac{\partial\vec{E}}{\partial t}\,d\vec{a}}$
+Verschiebungsstrom: $\boxed{\icc{I_V}=\int\varepsilon_0\dfrac{\partial\efc{\vec{E}}}{\partial t}\,d\vec{a}}$
 
 \subsection{Homogene Wellengleichung}
 
-$\boxed{\Delta\vec{B}-\varepsilon_0\mu_0\dfrac{\partial^2\vec{B}}{\partial t^2}=0}$ \quad $\boxed{\Delta\vec{E}-\varepsilon_0\mu_0\dfrac{\partial^2\vec{E}}{\partial t^2}=0}$
+$\boxed{\Delta\bfc{\vec{B}}-\varepsilon_0\mu_0\dfrac{\partial^2\bfc{\vec{B}}}{\partial t^2}=0}$ \quad $\boxed{\Delta\efc{\vec{E}}-\varepsilon_0\mu_0\dfrac{\partial^2\efc{\vec{E}}}{\partial t^2}=0}$
 
-Ausbreitungsgeschwindigkeit: $\boxed{c:=v=\dfrac{1}{\sqrt{\varepsilon_0\mu_0}}=\dfrac{E_0}{B_0}}$
+Ausbreitungsgeschwindigkeit: $\boxed{c:=v=\dfrac{1}{\sqrt{\varepsilon_0\mu_0}}=\dfrac{\efc{E_0}}{\bfc{B_0}}}$
 
 \subsection{Energietransport}
 
-Poynting-Vektor: $\boxed{\vec{S}=\dfrac{1}{\mu_0}\vec{E}\times\vec{B}}$ \quad $|\vec{S}|=$ Intensität
+Poynting-Vektor: $\boxed{\vec{S}=\dfrac{1}{\mu_0}\efc{\vec{E}}\times\bfc{\vec{B}}}$ \quad $|\vec{S}|=$ Intensität
 
-Momentaner Transport: $P=\int_A\dfrac{1}{\mu_0}(\vec{E}\times\vec{B})\,d\vec{a}$
+Momentaner Transport: $P=\int_A\dfrac{1}{\mu_0}(\efc{\vec{E}}\times\bfc{\vec{B}})\,d\vec{a}$
 
 Poynting-Theorem: $\boxed{\dfrac{\partial(u_{\text{mech}}+u_{\text{em}})}{\partial t}+\nabla\cdot\vec{S}=0}$
 
@@ -805,9 +848,9 @@ $\vec{A}(\vec{r},t)=\dfrac{\mu_0}{4\pi}\int_{\mathbb{R}^3}\dfrac{\vec{J}(\vec{r}
 $p(t)=Q(t)\cdot l=p_0\sin(\omega t)$: Dipolmoment
 
 $r\gg l$ Fernfeld:
-$E_\theta=-\dfrac{\omega^2 p_0}{4\pi\varepsilon_0 c^2}\dfrac{\sin\theta}{r}\sin(\omega(t-r/c))$
+$\efc{E_\theta}=-\dfrac{\omega^2 p_0}{4\pi\varepsilon_0 c^2}\dfrac{\sin\theta}{r}\sin(\omega(t-r/c))$
 
-$B_\varphi=-\dfrac{\omega^2 p_0}{4\pi\varepsilon_0 c^3}\dfrac{\sin\theta}{r}\sin(\omega(t-r/c))$
+$\bfc{B_\varphi}=-\dfrac{\omega^2 p_0}{4\pi\varepsilon_0 c^3}\dfrac{\sin\theta}{r}\sin(\omega(t-r/c))$
 
 Zeitgemittelte Leistung: $\langle P\rangle=\dfrac{\omega^4 p_0^2}{12\pi\varepsilon_0 c^3}$
 
@@ -816,11 +859,11 @@ Zeitgemittelte Leistung: $\langle P\rangle=\dfrac{\omega^4 p_0^2}{12\pi\varepsil
 
 $\rho_{\text{ges}}=\rho_{\text{frei}}+\rho_{\text{geb}}$
 
-$\varepsilon=\dfrac{E_{\text{vak}}}{E_{\text{res}}}=1+\chi$ \quad relative Dielektrizitätskonstante
+$\varepsilon=\dfrac{\efc{E_{\text{vak}}}}{\efc{E_{\text{res}}}}=1+\chi$ \quad relative Dielektrizitätskonstante
 
-$\chi=\dfrac{P}{\varepsilon_0 E_{\text{res}}}$ \quad elektrische Suszeptibilität
+$\chi=\dfrac{P}{\varepsilon_0 \efc{E_{\text{res}}}}$ \quad elektrische Suszeptibilität
 
-$\boxed{\vec{P}=N\vec{p}}$ \quad $\boxed{\vec{D}=\varepsilon_0\vec{E}+\vec{P}}$ \quad $\vec{P}=\varepsilon_0(\varepsilon-1)\vec{E}$
+$\boxed{\vec{P}=N\vec{p}}$ \quad $\boxed{\vec{D}=\varepsilon_0\efc{\vec{E}}+\vec{P}}$ \quad $\vec{P}=\varepsilon_0(\varepsilon-1)\efc{\vec{E}}$
 
 $\boxed{\nabla\cdot\vec{D}=\rho_{\text{frei}}}$ \quad $\nabla\cdot\vec{H}=\vec{J}_{\text{frei}}+\dfrac{\partial\vec{D}}{\partial t}$
 
@@ -834,10 +877,10 @@ $\boxed{\vec{\mu}=\icc{I}\cdot\vec{A}}$ \quad $|\vec{\mu}|=\icc{I}\cdot A$
 $\vec{\mu}$ steht senkrecht auf der Fläche $A$
 
 \textbf{2. Drehmoment im Magnetfeld:}
-$\boxed{\vec{M}=\vec{\mu}\times\vec{B}}$ \quad $|\vec{M}|=\mu B\sin\theta$ \quad $F_z=\mu\nabla_z B$
+$\boxed{\vec{M}=\vec{\mu}\times\bfc{\vec{B}}}$ \quad $|\vec{M}|=\mu \bfc{B}\sin\theta$ \quad $F_z=\mu\nabla_z \bfc{B}$
 
 \textbf{3. Potentielle Energie:}
-$\boxed{\ec{U}=-\vec{\mu}\cdot\vec{B}=-\mu B\cos\theta}$
+$\boxed{\ec{U}=-\vec{\mu}\cdot\bfc{\vec{B}}=-\mu \bfc{B}\cos\theta}$
 
 \textbf{Legende:}
 \begin{itemize}
