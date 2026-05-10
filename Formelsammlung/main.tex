@@ -230,7 +230,7 @@ $\dot{W}=\dfrac{dW}{dt}=\iint_A\vec{S}\cdot d\vec{a}=\dfrac{1}{2}\rho\omega^2\!\
 
 \fl{\textbf{Harm. Oszillator} (gesamt):}{\ec{E}=\tfrac{1}{2}m\omega^2 A^2=\tfrac{1}{2}kA^2}
 
-\fl{\textbf{Gedämpfter Oszillator:}}{\ec{E}(t)=E_0\,e^{-\gamma t},\quad \gamma=\dfrac{R}{m}}
+\fl{\textbf{Gedämpfter Oszillator:}}{\ec{E(t)}=\ec{E_0}\,e^{-\gamma t},\quad \gamma=\dfrac{R}{m}}
 
 \textbf{Gekoppelte Oszillatoren} (2 gleiche Massen $m$, Kopplungsfeder $k_c$):
 \[\omega_\sigma=\omega_0=\sqrt{k/m}\]
@@ -372,7 +372,7 @@ Kontinuierlich: $\boxed{\vec{E}(\vec{r})=\dfrac{1}{4\pi\varepsilon_0}\int_{\math
 
 pot. Energie: $\ec{E_{\text{pot}}}=|q||E||d|=|q||V|$ \quad $E=V/d$
 
-Kraft: $F=-\nabla E_{\text{pot}}$
+Kraft: $F=-\nabla \ec{E_{\text{pot}}}$
 
 \textbf{Kugel homogener Ladungsdichte:}
 $E(r)=\begin{cases}\dfrac{\rho R^3}{3r^2\varepsilon_0} & r>R\\ \dfrac{\rho r}{3\varepsilon_0} & r<R\end{cases}$ (Elektrisches Feld)
@@ -451,11 +451,11 @@ Parallelschaltung: $\boxed{C_{\text{ges}}=\sum_i C_i}$ \quad Serienschaltung: $\
 
 \subsection{Der elektrische Strom}
 
-Stromstärke: $\boxed{I=\dfrac{Q}{dt}}$ \quad $I\propto\dfrac{1}{A}$
+Stromstärke: $\boxed{\icc{I}=\dfrac{Q}{dt}}$ \quad $\icc{I}\propto\dfrac{1}{A}$
 
-Stromdichte: $\boxed{\vec{J}=nq\bar{v}=\rho v=\dfrac{I}{A}}$ \quad $\bar{v}$: mittlere Driftgeschwindigkeit, $\vec{J}\parallel d\vec{l}$
+Stromdichte: $\boxed{\vec{J}=nq\bar{v}=\rho v=\dfrac{\icc{I}}{A}}$ \quad $\bar{v}$: mittlere Driftgeschwindigkeit, $\vec{J}\parallel d\vec{l}$
 
-Strom durch Fläche: $\boxed{I_A=\int_{\partial V}\vec{J}\,d\vec{a}}=JA$ \quad $[J]=\text{A/m}^2$
+Strom durch Fläche: $\boxed{\icc{I_A}=\int_{\partial V}\vec{J}\,d\vec{a}}=JA$ \quad $[J]=\text{A/m}^2$
 
 Stromdichte versch. Teilchen: $\vec{J}=\sum_i n_i q_i\bar{v}_i$
 
@@ -467,23 +467,23 @@ Kontinuitätsgleichung: $\boxed{\nabla\cdot\vec{J}=-\dfrac{d\rho}{dt}}$ \quad $\
 
 Allgemein: $\boxed{\vec{J}=\sigma\vec{E}}$ \quad $\sigma$: Leitfähigkeit
 
-Widerstand: $\boxed{R=\dfrac{V}{I}=\int_{r_1}^{r_2}\dfrac{dr}{\sigma A(r)}}$
+Widerstand: $\boxed{R=\dfrac{V}{\icc{I}}=\int_{r_1}^{r_2}\dfrac{dr}{\sigma A(r)}}$
 
 Parallelschaltung: $\boxed{\dfrac{1}{R_{\text{ges}}}=\sum_i\dfrac{1}{R_i}}$ \quad Serienschaltung: $\boxed{R_{\text{ges}}=\sum_i R_i}$
 
 \subsection{Kirchhoff'sche Regeln}
 
-An jedem Schaltkreiskomponent: $\boxed{V_i=R_i I_i}$
+An jedem Schaltkreiskomponent: $\boxed{V_i=R_i \icc{I_i}}$
 
-An jedem Knoten: $\boxed{\sum I_i=0\;\Leftrightarrow\;\sum I_{\text{in}}=\sum I_{\text{out}}}$
+An jedem Knoten: $\boxed{\sum \icc{I_i}=0\;\Leftrightarrow\;\sum \icc{I_{\text{in}}}=\sum \icc{I_{\text{out}}}}$
 
 Für jede Schleife: $\boxed{\sum V_i=0}$
 
-Energieumwandlung im Widerstand: $P=IV=I^2R=\dfrac{V^2}{R}$ \quad $W=\dfrac{1}{2}CV_0^2$
+Energieumwandlung im Widerstand: $P=\icc{I}V=\icc{I}^2R=\dfrac{V^2}{R}$ \quad $W=\dfrac{1}{2}CV_0^2$
 
 \subsection{Schaltkreise mit Kondensatoren}
 
-$Q(t)=Q_0 e^{-t/RC}$ \quad Ladestrom: $I(t)=\dfrac{V_0}{R}e^{-t/RC}$
+$Q(t)=Q_0 e^{-t/RC}$ \quad Ladestrom: $\icc{I(t)}=\dfrac{V_0}{R}e^{-t/RC}$
 
 % ============================================================
 \section{Einführung in die Relativitätstheorie}
@@ -508,9 +508,9 @@ für Bewegung von $K'$ in $z$-Richtung
 $\Lambda=\begin{pmatrix}\gamma&0&0&-\beta\gamma\\0&1&0&0\\0&0&1&0\\-\beta\gamma&0&0&\gamma\end{pmatrix}$
 
 Vierer-Impuls L-Transformation:
-$\begin{pmatrix}E'_{\text{ges}}/c\\p'_x\\p'_y\\p'_z\end{pmatrix}=\Lambda\cdot\begin{pmatrix}E_{\text{ges}}/c\\p_x\\p_y\\p_z\end{pmatrix}$
+$\begin{pmatrix}\ec{E'_{\text{ges}}}/c\\p'_x\\p'_y\\p'_z\end{pmatrix}=\Lambda\cdot\begin{pmatrix}\ec{E_{\text{ges}}}/c\\p_x\\p_y\\p_z\end{pmatrix}$
 
-$\boxed{E=\gamma(E'+c\beta p')}$ \quad $\boxed{ct'=\gamma(ct-\beta z)}$
+$\boxed{\ec{E}=\gamma(\ec{E'}+c\beta p')}$ \quad $\boxed{ct'=\gamma(ct-\beta z)}$
 
 \subsection{Addition paralleler Geschwindigkeiten}
 
@@ -530,11 +530,11 @@ Vierergeschwindigkeit: $u^\mu=c\gamma\begin{pmatrix}1\\\vec{\beta}\end{pmatrix}$
 
 Impuls: $\boxed{\vec{p}=mv\gamma=\dfrac{mv}{\sqrt{1-\beta^2}}}$
 
-$p^2=\dfrac{E_{\text{ges}}^2}{c^2}-p^2=(mc)^2$
+$p^2=\dfrac{\ec{E_{\text{ges}}}^2}{c^2}-p^2=(mc)^2$
 
 Energie-Impuls Beziehung: $\boxed{\ec{E}^2-p^2c^2=m^2c^4=\ec{E_0}^2}$
 
-$v=c\sqrt{1-\!\left(\dfrac{E_0}{E_{\text{ges}}}\right)^{\!2}}$ \quad $v=\dfrac{pc}{\sqrt{p^2+mc^2}}$
+$v=c\sqrt{1-\!\left(\dfrac{\ec{E_0}}{\ec{E_{\text{ges}}}}\right)^{\!2}}$ \quad $v=\dfrac{pc}{\sqrt{p^2+mc^2}}$
 
 Kraft: $m\gamma\vec{a}=\vec{F}-\dfrac{1}{c^2}(\vec{F}\cdot\vec{v})\vec{v}$
 
@@ -555,9 +555,9 @@ $\dfrac{f_1}{f_2}=\dfrac{\lambda_2}{\lambda_1}$
 
 Lorentz-Kraft: $\boxed{\vec{F}=q\vec{E}+q(\vec{v}\times\vec{B})}$
 
-Stromdurchflossener Leiter: $\boxed{\vec{F}_L=I(\vec{\ell}\times\vec{B})}$
+Stromdurchflossener Leiter: $\boxed{\vec{F}_L=\icc{I}(\vec{\ell}\times\vec{B})}$
 
-Ampersches Gesetz: $\boxed{\mu_0 I=\oint_{\partial A}\vec{B}\,ds}$
+Ampersches Gesetz: $\boxed{\mu_0 \icc{I}=\oint_{\partial A}\vec{B}\,ds}$
 
 \bhbox{\textbf{Ladungsinvarianz:} $Q$ Lorentz-Skalar, relativistisch invariant, $Q=Q'$}
 
@@ -580,20 +580,20 @@ $K$ Labor: $F_\parallel=qE_\parallel$ \quad $F_\perp=\dfrac{1}{\gamma}F'_\perp=q
 
 \subsection{Wechselwirkungen zwischen bewegten Ladungen}
 
-$F_y=\dfrac{qI}{2\pi\varepsilon_0 c^2}\dfrac{v}{d}$ \quad Magnetisches Feld: $\boxed{B=\dfrac{I}{2\pi\varepsilon_0 c^2 d}}$
+$F_y=\dfrac{qI}{2\pi\varepsilon_0 c^2}\dfrac{v}{d}$ \quad Magnetisches Feld: $\boxed{B=\dfrac{\icc{I}}{2\pi\varepsilon_0 c^2 d}}$
 
 % ============================================================
 \section{Magnetische Felder}
 
 \chbox{$\mu_0=\dfrac{1}{\varepsilon_0 c^2}=4\pi\times10^{-7}\,\text{N\,A}^{-2}$}
 
-Magn. Feld unendl. langer Draht: $\boxed{B=\mu_0\dfrac{I}{2\pi r}}$ \quad $\boxed{\vec{B}=\dfrac{\vec{k}}{\omega}\times\vec{E}}$
+Magn. Feld unendl. langer Draht: $\boxed{B=\mu_0\dfrac{\icc{I}}{2\pi r}}$ \quad $\boxed{\vec{B}=\dfrac{\vec{k}}{\omega}\times\vec{E}}$
 
-Magnetfeld Zylinderspule: $\boxed{B=\mu_0\dfrac{N}{L}I}$ \quad $N$: Gesamtwindungen, $L$: Länge
+Magnetfeld Zylinderspule: $\boxed{B=\mu_0\dfrac{N}{L}\icc{I}}$ \quad $N$: Gesamtwindungen, $L$: Länge
 
 \subsection{Ampere'sches Gesetz}
 
-$\boxed{\oint_{\partial A}\vec{B}\,ds=\mu_0 I_{\text{eing}}=\mu_0\int_A\vec{J}\,d\vec{a}}$ \quad wähle Weg parallel zu $\vec{B}$
+$\boxed{\oint_{\partial A}\vec{B}\,ds=\mu_0 \icc{I_{\text{eing}}}=\mu_0\int_A\vec{J}\,d\vec{a}}$ \quad wähle Weg parallel zu $\vec{B}$
 
 $\boxed{\nabla\times\vec{B}=\mu_0\vec{J}}$ \quad 2. Maxwell: $\boxed{\nabla\cdot\vec{B}=0}$
 
@@ -605,16 +605,16 @@ $\boxed{\vec{A}(\vec{r})=\dfrac{\mu_0}{4\pi}\int_{\mathbb{R}^3}\dfrac{\vec{J}(\v
 
 \subsection{Das Biot-Savart'sche Gesetz}
 
-$\boxed{d\vec{B}=\dfrac{\mu_0 I}{4\pi r^2}(d\vec{l}\times\hat{r})=\dfrac{\mu_0 I}{4\pi r^3}|d\vec{l}\times\vec{r}|}$
+$\boxed{d\vec{B}=\dfrac{\mu_0 \icc{I}}{4\pi r^2}(d\vec{l}\times\hat{r})=\dfrac{\mu_0 \icc{I}}{4\pi r^3}|d\vec{l}\times\vec{r}|}$
 
 für Punktladung $q$: $\boxed{\vec{B}=\dfrac{\mu_0 q}{4\pi r^2}(\vec{v}\times\hat{r})}$
 
 Magnetfeld unendlicher Spule: $\boxed{B_z=\mu_0 nI}$
 
 Kreisförmiger Leiter auf $z$-Achse:
-$B_z(0,0,z)=\dfrac{\mu_0 R^2 I}{2(R^2+z^2)^{3/2}}$ \quad insbes.: $B_z(0,0,0)=\dfrac{\mu_0 I}{2R}$
+$B_z(0,0,z)=\dfrac{\mu_0 R^2 I}{2(R^2+z^2)^{3/2}}$ \quad insbes.: $B_z(0,0,0)=\dfrac{\mu_0 \icc{I}}{2R}$
 
-Unendlich langer dünner Leiter: $B=\mu_0\dfrac{I}{2\pi R}$
+Unendlich langer dünner Leiter: $B=\mu_0\dfrac{\icc{I}}{2\pi R}$
 
 \subsection{Energiedichte des magnetischen Feldes}
 
@@ -641,11 +641,11 @@ Magnetischer Fluss: $\boxed{\Phi(t)=\int_A\vec{B}\cdot d\vec{a}}$
 
 Induzierte Spannung: $\boxed{\varepsilon=-\frac{d\Phi}{dt}=\oint_C\vec{E}\cdot d\vec{L}=-\frac{d}{dt}\int_A\vec{B}\cdot d\vec{a}}$
 
-Induzierter Strom: $\boxed{I_{\text{ind}}=\dfrac{U_{\text{ind}}}{R}=\dfrac{\varepsilon}{R}=-\dfrac{1}{R}\dfrac{d\Phi}{dt}}$
+Induzierter Strom: $\boxed{\icc{I_{\text{ind}}}=\dfrac{U_{\text{ind}}}{R}=\dfrac{\varepsilon}{R}=-\dfrac{1}{R}\dfrac{d\Phi}{dt}}$
 
 $\Phi$: Magnetischer Fluss, $\varepsilon$: elektromotorische Kraft $\approx$ Spannung
 
-fallende Leiterschleife: $\boxed{F=I_{\text{ind}}aB}$ \quad $a$: Seitenlänge
+fallende Leiterschleife: $\boxed{F=\icc{I_{\text{ind}}}aB}$ \quad $a$: Seitenlänge
 
 \subsection{Lenz'sche Gesetz}
 
@@ -653,28 +653,28 @@ fallende Leiterschleife: $\boxed{F=I_{\text{ind}}aB}$ \quad $a$: Seitenlänge
 
 \subsection{Gegenseitige Induktivität}
 
-Gegeninduktivität: $\boxed{M_{21}=\dfrac{\Phi_{21}}{I_1}}$ \quad $[M]=H=\Omega s$
+Gegeninduktivität: $\boxed{M_{21}=\dfrac{\Phi_{21}}{\icc{I_1}}}$ \quad $[M]=H=\Omega s$
 
-$\boxed{\dfrac{\Phi_{12}}{I_2}=\dfrac{\Phi_{21}}{I_1}}$
+$\boxed{\dfrac{\Phi_{12}}{\icc{I_2}}=\dfrac{\Phi_{21}}{\icc{I_1}}}$
 
-Induzierte Spannung: $\boxed{\varepsilon_{21}=-M_{21}\dfrac{dI_1}{dt}}$ \quad (in Spule 2 durch Spule 1)
+Induzierte Spannung: $\boxed{\varepsilon_{21}=-M_{21}\dfrac{\icc{dI_1}}{dt}}$ \quad (in Spule 2 durch Spule 1)
 
 \yhbox{Bei Induktivität ist der Gesamtfluss mit $\Phi_{21}=N_2\cdot\Phi_{\text{pro Windung}}$ relevant.}
 
 \subsection{Selbstinduktivität}
 
-Induzierte Spannung: $\boxed{\varepsilon_{\text{ind}}=-L\dfrac{dI}{dt}}$
+Induzierte Spannung: $\boxed{\varepsilon_{\text{ind}}=-L\dfrac{\icc{dI}}{dt}}$
 
 $\boxed{\Phi=NBA}$
 
-Selbstinduktivität Spule: $\boxed{L=\dfrac{\Phi}{I}=\mu_0\dfrac{AN^2}{l}}$ \quad $A$: Querschnittfläche, $N$: Windungen
+Selbstinduktivität Spule: $\boxed{L=\dfrac{\Phi}{\icc{I}}=\mu_0\dfrac{AN^2}{l}}$ \quad $A$: Querschnittfläche, $N$: Windungen
 
 Gespeicherte Energie: $\boxed{\ec{U}=\dfrac{1}{2}LI^2}$
 
 % ============================================================
 \section{Wechselströme}
 
-Strom: $I=-\dfrac{dQ}{dt}=-C\dfrac{dV}{dt}$
+Strom: $\icc{I}=-\dfrac{dQ}{dt}=-C\dfrac{dV}{dt}$
 
 \subsection{Gedämpfter RLC-Stromkreis}
 
@@ -691,29 +691,29 @@ $\boxed{V(t)=Ae^{-\frac{R}{2L}t}(1+Bt)}$
 
 \subsection{RL-Stromkreis}
 
-Ansatz: $I(t)=I_0\cos(\omega t+\alpha)$
+Ansatz: $\icc{I(t)}=\icc{I_0}\cos(\omega t+\alpha)$
 
-Amplitude: $\boxed{I_0=\dfrac{\varepsilon_0}{\sqrt{R^2+\omega^2L^2}}}$ \quad $\tan\alpha=-\dfrac{\omega L}{R}$
+Amplitude: $\boxed{\icc{I_0}=\dfrac{\varepsilon_0}{\sqrt{R^2+\omega^2L^2}}}$ \quad $\tan\alpha=-\dfrac{\omega L}{R}$
 
 \yhbox{Low-Pass Filter: $\alpha<0$: Strom ist verzögert zur Spannung}
 
 \subsection{RC-Stromkreis}
 
-Amplitude: $\boxed{I_0=\dfrac{\varepsilon_0}{\sqrt{R^2+\frac{1}{\omega^2C^2}}}}$ \quad $\tan\alpha=\dfrac{1}{\omega RC}$
+Amplitude: $\boxed{\icc{I_0}=\dfrac{\varepsilon_0}{\sqrt{R^2+\frac{1}{\omega^2C^2}}}}$ \quad $\tan\alpha=\dfrac{1}{\omega RC}$
 
 \yhbox{High-Pass Filter: $\alpha>0$: Strom eilt der Spannung voraus}
 
 \subsection{RLC-Stromkreis}
 
-$\boxed{I_0=\dfrac{\varepsilon_0}{\sqrt{R^2+\!\left(\omega L-\frac{1}{\omega C}\right)^{\!2}}}}$
+$\boxed{\icc{I_0}=\dfrac{\varepsilon_0}{\sqrt{R^2+\!\left(\omega L-\frac{1}{\omega C}\right)^{\!2}}}}$
 
 $\tan\alpha=-\dfrac{1}{R}\!\left(\omega L-\dfrac{1}{\omega C}\right)$
 
-$\alpha=0$: $\omega_0=\omega_{\max}=\dfrac{1}{\sqrt{LC}}$ für $I$ maximal
+$\alpha=0$: $\omega_0=\omega_{\max}=\dfrac{1}{\sqrt{LC}}$ für $\icc{I}$ maximal
 
 \subsection{Beschreibung durch komplexe Zahlen}
 
-Komplexer Strom: $\boxed{I_C=I_0 e^{i(\omega t+\alpha)}}$
+Komplexer Strom: $\boxed{\icc{I_C}=\icc{I_0} e^{i(\omega t+\alpha)}}$
 
 Impedanz: $Z$ (verallg. Widerstand) \quad Admittanz: $Y=1/Z$
 
@@ -721,9 +721,9 @@ Phasenwinkel: $\alpha=\arctan\!\left(\dfrac{\text{Im}(Y)}{\text{Re}(Y)}\right)$
 
 Parallelschaltung: $Y=\sum_j Y_j$ \quad Serienschaltung: $Z=\sum_j Z_j$
 
-Reeller Strom: $I_{Re}=\dfrac{U_{Re}}{|Z|}$ \quad $|Z|=\sqrt{\text{Re}(Z)^2+\text{Im}(Z)^2}$
+Reeller Strom: $\icc{I_{Re}}=\dfrac{U_{Re}}{|Z|}$ \quad $|Z|=\sqrt{\text{Re}(Z)^2+\text{Im}(Z)^2}$
 
-Amplitude: $I_A=U_0\cdot|Y|$ \quad Serienschaltung Spulen: $L_{\text{tot}}=L_1+L_2$
+Amplitude: $\icc{I_A}=U_0\cdot|Y|$ \quad Serienschaltung Spulen: $L_{\text{tot}}=L_1+L_2$
 
 $z=|z|e^{i\alpha}$, $\alpha=\arctan(y/x)$ \quad $\lim_{\omega\to\infty}\arctan(\omega RC)=\pi/2$
 
@@ -742,9 +742,9 @@ Gesamtimpedanz $A\|B$: $Z_{A\|B}=\dfrac{Z_A Z_B}{Z_A+Z_B}$
 
 \subsection{Leistungsaufnahme}
 
-Bei $\alpha\neq0$: $\boxed{P=\langle V\cdot I\rangle=\dfrac{1}{2}V_0 I_0\cos\alpha}$
+Bei $\alpha\neq0$: $\boxed{P=\langle V\cdot \icc{I}\rangle=\dfrac{1}{2}V_0 \icc{I_0}\cos\alpha}$
 
-Eff. Spannung: $V_{\text{eff}}=\hat{V}_0/\!\sqrt{2}$ \quad Eff. Strom: $I_{\text{eff}}=\hat{I}_0/\!\sqrt{2}$
+Eff. Spannung: $V_{\text{eff}}=\hat{V}_0/\!\sqrt{2}$ \quad Eff. Strom: $\icc{I_{\text{eff}}}=\hat{\icc{I}}_0/\!\sqrt{2}$
 
 \subsection{Transformator}
 
@@ -752,7 +752,7 @@ Eff. Spannung: $V_{\text{eff}}=\hat{V}_0/\!\sqrt{2}$ \quad Eff. Strom: $I_{\text
 
 $L_{12}=\mu_0\dfrac{N_1 N_2 A}{L}\leq\sqrt{L_1 L_2}$
 
-$\boxed{\dfrac{I_P}{I_S}\approx\pm\dfrac{N_2}{N_1}\approx\dfrac{\hat{V}_S}{\hat{V}_P}}$
+$\boxed{\dfrac{\icc{I_P}}{\icc{I_S}}\approx\pm\dfrac{N_2}{N_1}\approx\dfrac{\hat{V}_S}{\hat{V}_P}}$
 
 % ============================================================
 \section{Maxwellgleichungen und elektromagnetische Wellen}
@@ -767,14 +767,14 @@ Nabla-Form & Integralform \\
 $\nabla\cdot\vec{E}=\frac{\rho}{\varepsilon_0}$ & $\int_{\partial V}\vec{E}\cdot d\vec{a}=\frac{Q_{\text{in}}}{\varepsilon_0}$ \\
 $\nabla\cdot\vec{B}=0$ & $\int_{\partial V}\vec{B}\cdot d\vec{a}=0$ \\
 $\nabla\times\vec{E}=-\frac{\partial\vec{B}}{\partial t}$ & $\oint\vec{E}\cdot d\vec{s}=-\frac{\partial}{\partial t}\int_V\vec{B}\cdot d\vec{a}$ \\
-$\nabla\times\vec{B}=\mu_0\vec{J}+\mu_0\varepsilon_0\frac{\partial\vec{E}}{\partial t}$ & $\oint\vec{B}\cdot d\vec{s}=\mu_0 I_{\text{eing}}+\mu_0\varepsilon_0\frac{\partial}{\partial t}\int_V\vec{E}\cdot d\vec{a}$ \\
+$\nabla\times\vec{B}=\mu_0\vec{J}+\mu_0\varepsilon_0\frac{\partial\vec{E}}{\partial t}$ & $\oint\vec{B}\cdot d\vec{s}=\mu_0 \icc{I_{\text{eing}}}+\mu_0\varepsilon_0\frac{\partial}{\partial t}\int_V\vec{E}\cdot d\vec{a}$ \\
 $\nabla\cdot\vec{J}=-\frac{\partial\rho}{\partial t}$ & Kontinuitätsgleichung \\
 \hline
 \end{tabularx}}
 
 falls $\vec{J}=0$: $\boxed{\nabla\times\vec{B}=\dfrac{1}{c^2}\dfrac{\partial\vec{E}}{\partial t}}$
 
-Verschiebungsstrom: $\boxed{I_V=\int\varepsilon_0\dfrac{\partial\vec{E}}{\partial t}\,d\vec{a}}$
+Verschiebungsstrom: $\boxed{\icc{I_V}=\int\varepsilon_0\dfrac{\partial\vec{E}}{\partial t}\,d\vec{a}}$
 
 \subsection{Homogene Wellengleichung}
 
@@ -829,7 +829,7 @@ $\boxed{\rho_{\text{geb}}=-\nabla\cdot\vec{P}}$ \quad $\boxed{\vec{J}_{\text{geb
 \subsection{Magnetisches Moment}
 
 \textbf{1. Stromschleife:}
-$\boxed{\vec{\mu}=I\cdot\vec{A}}$ \quad $|\vec{\mu}|=I\cdot A$
+$\boxed{\vec{\mu}=\icc{I}\cdot\vec{A}}$ \quad $|\vec{\mu}|=\icc{I}\cdot A$
 
 $\vec{\mu}$ steht senkrecht auf der Fläche $A$
 
@@ -837,12 +837,12 @@ $\vec{\mu}$ steht senkrecht auf der Fläche $A$
 $\boxed{\vec{M}=\vec{\mu}\times\vec{B}}$ \quad $|\vec{M}|=\mu B\sin\theta$ \quad $F_z=\mu\nabla_z B$
 
 \textbf{3. Potentielle Energie:}
-$\boxed{U=-\vec{\mu}\cdot\vec{B}=-\mu B\cos\theta}$
+$\boxed{\ec{U}=-\vec{\mu}\cdot\vec{B}=-\mu B\cos\theta}$
 
 \textbf{Legende:}
 \begin{itemize}
   \item $\vec{\mu},\mu$: Magnetisches Moment (Vektor/Betrag)
-  \item $I$: Stromstärke
+  \item $\icc{I}$: Stromstärke
   \item $\vec{A},A$: Flächenvektor/Betrag der Schleife
   \item $\vec{B}$: Magnetfeld; $\theta$: Winkel zwischen $\vec{\mu}$ und $\vec{B}$
   \item $e=1.602\times10^{-19}$ C; $m_e=9.109\times10^{-31}$ kg
