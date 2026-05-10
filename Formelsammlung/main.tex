@@ -21,6 +21,7 @@
 % Tables
 \usepackage{booktabs}
 \usepackage{array}
+\usepackage{tabularx}
 
 % Lists
 \usepackage{enumitem}
@@ -57,6 +58,12 @@
   \par\vspace{2pt}\noindent%
   \colorbox{magenta!25}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{#1}}%
   \par\vspace{2pt}}
+\newcommand{\ghbox}[1]{%
+  \par\vspace{2pt}\noindent%
+  \colorbox{green!18}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{#1}}%
+  \par\vspace{2pt}}
+\newcommand{\ec}[1]{{\setlength\fboxsep{1.5pt}\colorbox{green!35}{\ensuremath{#1}}}}
+\newcommand{\icc}[1]{{\setlength\fboxsep{1.5pt}\colorbox{violet!25}{\ensuremath{#1}}}}
 
 % ---------- Page style ----------
 \pagestyle{plain}
@@ -81,21 +88,21 @@
 
 \fl{\textbf{Bewegungsgleichung:}}{s(t)=s_0+v_0 t+\tfrac{1}{2}at^2 \quad v^2=v_0^2+2as}
 \fl{\textbf{Zentripetalkraft:}}{F_{ZP}=\dfrac{mv^2}{r}}
-\fl{\textbf{Leistung:}}{P=\mathbf{F}\cdot\mathbf{v}=M\omega}
-\fl{\textbf{Arbeit und Kraft:}}{W=\int\mathbf{F}\cdot d\mathbf{s}}
-\fl{\textbf{Schwerpunktsystem:}}{\sum_i\mathbf{p}_i=0}
+\fl{\textbf{Leistung:}}{P=\vec{F}\cdot\vec{v}=M\omega}
+\fl{\textbf{Arbeit und Kraft:}}{W=\int\vec{F}\cdot d\vec{s}}
+\fl{\textbf{Schwerpunktsystem:}}{\sum_i\vec{p}_i=0}
 \fl{\textbf{Kraft durch Energie:}}{F=-\partial W/\partial x}
 
-\fl{\textbf{Trägheitsmoment:}}{\mathbf{M}=J_A\boldsymbol{\alpha}}
+\fl{\textbf{Trägheitsmoment:}}{\vec{M}=J_A\vec{\alpha}}
 \fl{\textbf{Mittelwert} $\langle\cos^2\rangle$:}{\langle\cos^2\varphi\rangle=1/2}
-\fl{\textbf{Satz von Stokes:}}{\int_C\nabla\times\mathbf{B}\,d\mu=\oint_{\partial C}\mathbf{B}\,ds}
-\fl{\textbf{Drehimpuls:}}{\mathbf{L}=\int\mathbf{M}\,dt=J\omega}
+\fl{\textbf{Satz von Stokes:}}{\int_C\nabla\times\vec{B}\,d\mu=\oint_{\partial C}\vec{B}\,ds}
+\fl{\textbf{Drehimpuls:}}{\vec{L}=\int\vec{M}\,dt=J\omega}
 
 \subsection{Trigonometrie / Skalarprodukt}
 
-\fl{Skalarprodukt:}{\mathbf{a}\cdot\mathbf{b}=|\mathbf{a}||\mathbf{b}|\cos\varphi}
-\fl{Kreuzprodukt:}{|\mathbf{a}\times\mathbf{b}|=|\mathbf{a}||\mathbf{b}|\sin\theta}
-$\mathbf{a}$: Daumen, $\mathbf{b}$: Zeigefinger
+\fl{Skalarprodukt:}{\vec{a}\cdot\vec{b}=|\vec{a}||\vec{b}|\cos\varphi}
+\fl{Kreuzprodukt:}{|\vec{a}\times\vec{b}|=|\vec{a}||\vec{b}|\sin\theta}
+$\vec{a}$: Daumen, $\vec{b}$: Zeigefinger
 \fl{$\sin\varphi$:}{\cos(\varphi-\pi/2)}
 \fl{$\cos\varphi$:}{\sin(\varphi+\pi/2)}
 
@@ -107,16 +114,13 @@ $\mathbf{a}$: Daumen, $\mathbf{b}$: Zeigefinger
 
 \subsection{Vektoranalysis}
 
-\fl{\textbf{Divergenz:}}{\nabla\cdot\mathbf{F}=\sum_i\dfrac{\partial F_i}{\partial x_i}}
+\fl{\textbf{Divergenz:}}{\nabla\cdot\vec{F}=\sum_i\dfrac{\partial F_i}{\partial x_i}}
 \fl{\textbf{Gradient:}}{\nabla f=\bigl(\tfrac{\partial f}{\partial x_1},\ldots,\tfrac{\partial f}{\partial x_n}\bigr)^T}
 
-\textbf{Rotation:}
-\[
-\nabla\times\mathbf{V}=
+\textbf{Rotation:} $\nabla\times\vec{V}=
 \begin{pmatrix}\partial_x\\\partial_y\\\partial_z\end{pmatrix}\times
 \begin{pmatrix}V_1\\V_2\\V_3\end{pmatrix}=
-\begin{pmatrix}V_{3,y}-V_{2,z}\\V_{1,z}-V_{3,x}\\V_{2,x}-V_{1,y}\end{pmatrix}
-\]
+\begin{pmatrix}V_{3,y}-V_{2,z}\\V_{1,z}-V_{3,x}\\V_{2,x}-V_{1,y}\end{pmatrix}$
 
 \subsection{Koordinatensysteme}
 
@@ -145,47 +149,26 @@ e^{\alpha t}(C_3\cos\beta t+C_4\sin\beta t) & \Delta<0\end{cases}$
 
 \fl{\textbf{Taylor:}}{f(x)=\sum_{n=0}^{\infty}\dfrac{f^{(n)}(x_0)}{n!}(x-x_0)^n}
 
-\subsection{SI-Einheiten}
-
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{l|l|l}
-\toprule
-\textbf{Name} & \textbf{Symbol} & \textbf{Äquivalenz} \\
-\midrule
-Newton         & $N$            & $\text{kg\,m\,s}^{-2}$ \\
-Joule          & $J$            & $\text{kg\,m}^2\text{s}^{-2}=\text{N\,m}=\text{W\,s}$ \\
-Watt           & $W$            & $\text{J\,s}^{-1}$ \\
-Hertz          & $\text{Hz}$    & $\text{s}^{-1}$ \\
-Pascal         & $\text{Pa}$    & $\text{N\,m}^{-2}$ \quad(1 bar = 100 kPa) \\
-\midrule
-Coulomb        & $C$            & $\text{A\,s}$ \\
-Volt           & $V$            & $\text{J\,C}^{-1}=\text{W\,A}^{-1}$ \\
-Tesla          & $T$            & $\text{V\,s\,m}^{-2}$ \\
-Ohm            & $\Omega$       & $\text{V\,A}^{-1}$ \\
-Henry          & $H$            & $\text{V\,s\,A}^{-1}$ \quad(Induktivität) \\
-\midrule
-Elektronenvolt & $\text{eV}$    & $1.602\times10^{-19}\,\text{J}$ \\
-Magn. Feldkonst. & $\mu_0$      & $4\pi\times10^{-7}\,\text{N\,A}^{-2}$ \\
-\bottomrule
-\end{tabular}
 
 % ============================================================
 \section{Wellen}
 
 \renewcommand{\arraystretch}{1.1}
-\begin{tabular}{l|l|l}
+\begin{tabularx}{\linewidth}{|l|X|l|}
+\hline
 \textbf{Symbol} & \textbf{Name} & \textbf{Einheit} \\
-\midrule
+\hline
 $\xi$, $\xi_0$ & Auslenkung, Amplitude & m \\
-$k$            & Wellenzahl (Eigentlich winkel pro Länge)           & rad/m \\
+$k$            & Wellenzahl            & rad/m \\
 $v$, $v_p$, $v_g$ & Wellen-, Phasen-, Gruppengeschw. & m/s \\
 $S$            & Seilspannung          & N \\
 $\delta$       & Phasenunterschied     & rad \\
 $\Delta x$     & Gangunterschied       & m \\
 $\alpha$       & Impedanzverhältnis    & --- \\
-$I$            & Intensität            & W/m$^2$ (Leistung / Fläche)\\
+$I$            & Intensität            & W/m$^2$ \\
 $n$            & Brechungsindex        & --- \\
-\end{tabular}
+\hline
+\end{tabularx}
 
 \subsection{Harmonische Wellen}
 
@@ -206,17 +189,17 @@ Geschwindigkeit Seilwelle: $v=\sqrt{\dfrac{S}{\rho}}$ \quad $S$: Seilspannung [N
 
 Wellengleichung 3D: $\boxed{\dfrac{1}{v^2}\dfrac{\partial^2\xi}{\partial t^2}-\Delta\xi=0}$ \quad $\Delta=\nabla^2$
 
-Kugelwellen: $\boxed{\boldsymbol{\xi}(\mathbf{r},t)=\dfrac{A_1}{r}f_1(kr-\omega t)+\dfrac{A_2}{r}f_2(kr+\omega t)}$ \quad ($f_1,f_2\in C^2$, bel.)
+Kugelwellen: $\boxed{\vec{\xi}(\vec{r},t)=\dfrac{A_1}{r}f_1(kr-\omega t)+\dfrac{A_2}{r}f_2(kr+\omega t)}$ \quad ($f_1,f_2\in C^2$, bel.)
 
 Kreiswellen: $A\propto\dfrac{1}{\sqrt{r}}$ \quad Wellenberg: $\sin(nx)=1$
 
 \subsection{Polarisation}
 
-$\boldsymbol{\xi}(x,t)=\begin{pmatrix}A_x\\A_y\end{pmatrix}e^{i(kx-\omega t)}$
+$\vec{\xi}(x,t)=\begin{pmatrix}A_x\\A_y\end{pmatrix}e^{i(kx-\omega t)}$
 
 \begin{itemize}
-  \item linear polarisiert: $\mathbf{A}$ konstant
-  \item zirkular polarisiert: $|\mathbf{A}|$ konstant, Richtung ändert sich. Entsteht durch Überlagerung von 2 linear polarisierten Wellen mit Phasenunterschied $\varphi=\pi/2$.
+  \item linear polarisiert: $\vec{A}$ konstant
+  \item zirkular polarisiert: $|\vec{A}|$ konstant, Richtung ändert sich. Entsteht durch Überlagerung von 2 linear polarisierten Wellen mit Phasenunterschied $\varphi=\pi/2$.
   \item elliptisch polarisiert: $\varphi\neq 0,\;\varphi\neq\pi/2$
 \end{itemize}
 
@@ -241,22 +224,22 @@ Mittlere Intensität: $\langle I\rangle=\dfrac{1}{2}\rho\dfrac{\omega^3}{k}A^2=\
 Mittlere Leistung: $\boxed{\langle P\rangle=\dfrac{1}{2}\rho v\omega^2 A^2}$
 
 Energiestrom:
-$\dot{W}=\dfrac{dW}{dt}=\iint_A\vec{S}\cdot d\mathbf{a}=\dfrac{1}{2}\rho\omega^2\!\left(\dfrac{A_0}{r}\right)^{\!2}v\cdot4\pi r^2=2\pi\rho\omega^2 A_0^2 v$
+$\dot{W}=\dfrac{dW}{dt}=\iint_A\vec{S}\cdot d\vec{a}=\dfrac{1}{2}\rho\omega^2\!\left(\dfrac{A_0}{r}\right)^{\!2}v\cdot4\pi r^2=2\pi\rho\omega^2 A_0^2 v$
 
 \subsection{Energie von Schwingungen}
 
-\fl{\textbf{Harm. Oszillator} (gesamt):}{E=\tfrac{1}{2}m\omega^2 A^2=\tfrac{1}{2}kA^2}
+\fl{\textbf{Harm. Oszillator} (gesamt):}{\ec{E}=\tfrac{1}{2}m\omega^2 A^2=\tfrac{1}{2}kA^2}
 
-\fl{\textbf{Gedämpfter Oszillator:}}{E(t)=E_0\,e^{-\gamma t},\quad \gamma=\dfrac{R}{m}}
+\fl{\textbf{Gedämpfter Oszillator:}}{\ec{E}(t)=E_0\,e^{-\gamma t},\quad \gamma=\dfrac{R}{m}}
 
 \textbf{Gekoppelte Oszillatoren} (2 gleiche Massen $m$, Kopplungsfeder $k_c$):
 \[\omega_\sigma=\omega_0=\sqrt{k/m}\]
 \[\omega_\delta=\sqrt{\omega_0^2+2k_c/m}\]
-\[E_1=\tfrac{1}{2}k(y_1^0)^2\cos^2\!\!\left(\tfrac{\omega_\sigma-\omega_\delta}{2}t\right)\]
-\[E_2=\tfrac{1}{2}k(y_1^0)^2\sin^2\!\!\left(\tfrac{\omega_\sigma-\omega_\delta}{2}t\right)\]
+\fl{$\ec{E_1}$:}{\tfrac{1}{2}k(y_1^0)^2\cos^2\!\!\left(\tfrac{\omega_\sigma-\omega_\delta}{2}t\right)}
+\fl{$\ec{E_2}$:}{\tfrac{1}{2}k(y_1^0)^2\sin^2\!\!\left(\tfrac{\omega_\sigma-\omega_\delta}{2}t\right)}
 Energie schwingt mit Schwebungsfrequenz $\tfrac{|\omega_\sigma-\omega_\delta|}{2}$ zwischen den Moden.
 
-\fl{\textbf{Reflexion/Transmission:}}{R_E+T_E=1,\quad R_E=\left(\dfrac{1-\alpha}{1+\alpha}\right)^{\!2},\quad T_E=\dfrac{4\alpha}{(1+\alpha)^2}}
+\fl{\textbf{Reflexion/Transmission:}}{\ec{R_E}+\ec{T_E}=1,\quad \ec{R_E}=\left(\dfrac{1-\alpha}{1+\alpha}\right)^{\!2},\quad \ec{T_E}=\dfrac{4\alpha}{(1+\alpha)^2}}
 
 \subsection{Superposition}
 
@@ -367,73 +350,73 @@ Machwinkel: $\theta=\arcsin\dfrac{u}{v_Q}$
 
 \subsection{Coulomb'sches Gesetz}
 
-$\boxed{\mathbf{F}_{21}=\dfrac{1}{4\pi\varepsilon_0}\dfrac{q_1 q_2}{r_{21}^2}\hat{r}_{21}}$ \quad (Kraft auf $q_2$ durch $q_1$)
+$\boxed{\vec{F}_{21}=\dfrac{1}{4\pi\varepsilon_0}\dfrac{q_1 q_2}{r_{21}^2}\hat{r}_{21}}$ \quad (Kraft auf $q_2$ durch $q_1$)
 
-Kraft auf Testladung: $\boxed{\mathbf{F}_j=\dfrac{1}{4\pi\varepsilon_0}\sum_{i\neq j}\dfrac{q_j q_i}{r_{ji}^2}\hat{r}_{ji}}$
+Kraft auf Testladung: $\boxed{\vec{F}_j=\dfrac{1}{4\pi\varepsilon_0}\sum_{i\neq j}\dfrac{q_j q_i}{r_{ji}^2}\hat{r}_{ji}}$
 
 \subsection{Energie einer Ladungsverteilung}
 
-$\mathcal{W}=\int_{r_{21}}^{\infty}\mathbf{F}_{21}(r)\,ds$ \quad $\Rightarrow$ $\boxed{\mathcal{W}=\dfrac{1}{4\pi\varepsilon_0}\dfrac{q_1 q_2}{r_{21}}}$ (Positiv wenn ich arbeit verrichten muss)
+$\ec{\mathcal{W}}=\int_{r_{21}}^{\infty}\vec{F}_{21}(r)\,ds$ \quad $\Rightarrow$ $\boxed{\ec{\mathcal{W}}=\dfrac{1}{4\pi\varepsilon_0}\dfrac{q_1 q_2}{r_{21}}}$ (Positiv wenn ich arbeit verrichten muss)
 
-Energie einer Ladung: $\mathcal{W}_j=\dfrac{1}{4\pi\varepsilon_0}\sum_{i=1}^{j-1}\dfrac{q_j q_i}{r_{ji}}$
+Energie einer Ladung: $\ec{\mathcal{W}_j}=\dfrac{1}{4\pi\varepsilon_0}\sum_{i=1}^{j-1}\dfrac{q_j q_i}{r_{ji}}$
 
-Gesamtenergie: $\boxed{\mathcal{W}=\dfrac{1}{4\pi\varepsilon_0}\dfrac{1}{2}\sum_j\sum_{i\neq j}\dfrac{q_j q_i}{r_{ji}}}$
+Gesamtenergie: $\boxed{\ec{\mathcal{W}}=\dfrac{1}{4\pi\varepsilon_0}\dfrac{1}{2}\sum_j\sum_{i\neq j}\dfrac{q_j q_i}{r_{ji}}}$
 
 \subsection{Das elektrische Feld}
 
-Punktladung: $\boxed{\mathbf{E}(\mathbf{r})=\dfrac{1}{4\pi\varepsilon_0}\dfrac{q}{r^2}\hat{r}}$
+Punktladung: $\boxed{\vec{E}(\vec{r})=\dfrac{1}{4\pi\varepsilon_0}\dfrac{q}{r^2}\hat{r}}$
 
-Diskret: $\boxed{\mathbf{E}(\mathbf{r}_0)=\dfrac{1}{4\pi\varepsilon_0}\sum_{i=1}^n\dfrac{q_i}{r_{0i}^2}\hat{r}_{0i}}$ \quad $\mathbf{F}=q\mathbf{E}$
+Diskret: $\boxed{\vec{E}(\vec{r}_0)=\dfrac{1}{4\pi\varepsilon_0}\sum_{i=1}^n\dfrac{q_i}{r_{0i}^2}\hat{r}_{0i}}$ \quad $\vec{F}=q\vec{E}$
 
-Kontinuierlich: $\boxed{\mathbf{E}(\mathbf{r})=\dfrac{1}{4\pi\varepsilon_0}\int_{\mathbb{R}^3}\dfrac{\rho(\mathbf{r}')}{|\mathbf{r}-\mathbf{r}'|^3}(\mathbf{r}-\mathbf{r}')\,d^3r'}$
+Kontinuierlich: $\boxed{\vec{E}(\vec{r})=\dfrac{1}{4\pi\varepsilon_0}\int_{\mathbb{R}^3}\dfrac{\rho(\vec{r}')}{|\vec{r}-\vec{r}'|^3}(\vec{r}-\vec{r}')\,d^3r'}$
 
-pot. Energie: $E_{\text{pot}}=|q||E||d|=|q||V|$ \quad $E=V/d$
+pot. Energie: $\ec{E_{\text{pot}}}=|q||E||d|=|q||V|$ \quad $E=V/d$
 
 Kraft: $F=-\nabla E_{\text{pot}}$
 
 \textbf{Kugel homogener Ladungsdichte:}
-$E(r)=\begin{cases}\dfrac{\rho R^3}{3r^2\varepsilon_0} & r>R\\ \dfrac{\rho r}{3\varepsilon_0} & r<R\end{cases}$
+$E(r)=\begin{cases}\dfrac{\rho R^3}{3r^2\varepsilon_0} & r>R\\ \dfrac{\rho r}{3\varepsilon_0} & r<R\end{cases}$ (Elektrisches Feld)
 
 \subsection{Gesetz von Gauss}
 
-$\boxed{\Phi=\oint_{\partial V}\mathbf{E}\cdot d\mathbf{a}=\dfrac{1}{\varepsilon_0}\int_V\rho\,dV=\dfrac{q_{\text{eingeschlossen}}}{\varepsilon_0}}$
+$\boxed{\Phi=\oint_{\partial V}\vec{E}\cdot d\vec{a}=\dfrac{1}{\varepsilon_0}\int_V\rho\,dV=\dfrac{q_{\text{eingeschlossen}}}{\varepsilon_0}}$
 
-wähle Fläche senkrecht zu $\mathbf{E}$; \; $\mathbf{E}\perp d\mathbf{a}$: $\mathbf{E}\cdot d\mathbf{a}=0$
+wähle Fläche senkrecht zu $\vec{E}$; \; $\vec{E}\perp d\vec{a}$: $\vec{E}\cdot d\vec{a}=0$
 
 \subsection{Energie des elektrischen Feldes}
 
-Energiedichte: $\boxed{u=\dfrac{\varepsilon_0}{2}E^2}$ \quad Gesamtenergie: $\boxed{U=\int_V\dfrac{\varepsilon_0}{2}E^2\,dV}$
+Energiedichte: $\boxed{\ec{u}=\dfrac{\varepsilon_0}{2}E^2}$ \quad Gesamtenergie: $\boxed{\ec{U}=\int_V\dfrac{\varepsilon_0}{2}E^2\,dV}$
 
 \subsection{Das elektrische Potential}
 
-Spannung: $\boxed{V=\varphi=-\int_{r_0}^{r_1}\mathbf{E}(\mathbf{r})\,dr}$
+Spannung: $\boxed{V=\varphi=-\int_{r_0}^{r_1}\vec{E}(\vec{r})\,dr}$
 
-Potentialdifferenz: $\varphi_{BA}=\varphi(A)-\varphi(B)=-\int_A^B\mathbf{E}\,ds$
+Potentialdifferenz: $\varphi_{BA}=\varphi(A)-\varphi(B)=-\int_A^B\vec{E}\,ds$
 
-$\varphi(r)=-\int_\infty^r E(r')\,dr'+\varphi(\infty)$ \quad $\boxed{\mathbf{E}=-\nabla\varphi}$
+$\varphi(r)=-\int_\infty^r E(r')\,dr'+\varphi(\infty)$ \quad $\boxed{\vec{E}=-\nabla\varphi}$
 
 $W_{BA}=\varphi_{BA}q$
 
 \textbf{Potential mehrerer Ladungen:}
-\[\boxed{\varphi(\mathbf{r})=\frac{1}{4\pi\varepsilon_0}\int_{\mathbb{R}^3}\frac{\rho(\mathbf{r}')}{|\mathbf{r}-\mathbf{r}'|}d^3r'}\]
+\[\boxed{\varphi(\vec{r})=\frac{1}{4\pi\varepsilon_0}\int_{\mathbb{R}^3}\frac{\rho(\vec{r}')}{|\vec{r}-\vec{r}'|}d^3r'}\]
 
-Gesamtenergie: $W=\dfrac{1}{2}\int_{\mathbb{R}^3}\varphi(\mathbf{r})\rho(\mathbf{r})\,d^3r'$
+Gesamtenergie: $W=\dfrac{1}{2}\int_{\mathbb{R}^3}\varphi(\vec{r})\rho(\vec{r})\,d^3r'$
 
 Potential Punktladung: $\varphi(r)=\dfrac{1}{4\pi\varepsilon_0}\dfrac{q}{r}$
 
 Potential Ringladung: $\varphi(x_0)=\dfrac{1}{4\pi\varepsilon_0}\dfrac{Q}{\sqrt{x_0^2+R^2}}$
 
-\textbf{Satz von Gauss:} $\boxed{\int_{\partial V}\mathbf{F}\,d\mathbf{a}=\int_V\text{div}\,\mathbf{F}\,dV}$
+\textbf{Satz von Gauss:} $\boxed{\int_{\partial V}\vec{F}\,d\vec{a}=\int_V\text{div}\,\vec{F}\,dV}$
 
 Poisson-Gleichung: $\boxed{\Delta\varphi=-\dfrac{\rho}{\varepsilon_0}}$ \quad $\Delta=\nabla^2$: Laplace-Operator
 
 \subsection{Elektrische Leiter}
 
-$\mathbf{E}=0$ im Inneren $\Rightarrow\boxed{\dfrac{Q(v)}{\varepsilon_0}=0}$
+$\vec{E}=0$ im Inneren $\Rightarrow\boxed{\dfrac{Q(v)}{\varepsilon_0}=0}$
 
 $\varphi=\text{konst.}$ im Inneren; Oberfläche ist Äquipotentialfläche.
 
-$\boxed{\mathbf{E}=\dfrac{\sigma}{\varepsilon_0}\hat{n}}$ \quad $\sigma=Q/A$
+$\boxed{\vec{E}=\dfrac{\sigma}{\varepsilon_0}\hat{n}}$ \quad $\sigma=Q/A$
 
 \subsection{Spiegelladungen}
 
@@ -445,11 +428,11 @@ Ladungsdichte: $\boxed{\sigma=\varepsilon_0 E_z=\dfrac{-qh}{2\pi(r^2+h^2)^{3/2}}
 
 El. Potential: $\boxed{\varphi(r,\theta)=\dfrac{1}{4\pi\varepsilon_0}\dfrac{p}{r^2}\cos\theta}$
 
-Dipolmoment: $\boxed{\mathbf{p}=q\mathbf{l}}$ \quad $\mathbf{l}$: Abstandsvektor der Ladungen
+Dipolmoment: $\boxed{\vec{p}=q\vec{l}}$ \quad $\vec{l}$: Abstandsvektor der Ladungen
 
-Kraft auf Dipol: $\boxed{\mathbf{F}=(\mathbf{p}\cdot\nabla)\mathbf{E}}$
+Kraft auf Dipol: $\boxed{\vec{F}=(\vec{p}\cdot\nabla)\vec{E}}$
 
-Drehmoment: $\boxed{\mathbf{M}=\mathbf{p}\times\mathbf{E}}$
+Drehmoment: $\boxed{\vec{M}=\vec{p}\times\vec{E}}$
 
 \subsection{Kondensatoren}
 
@@ -457,9 +440,9 @@ Kapazität: $\boxed{Q=C\varphi=CV}$
 
 Plattenkondensator: $\boxed{E=\dfrac{V}{d}=\dfrac{Q}{\varepsilon_0 A}}$ \quad $\boxed{C=\dfrac{A\varepsilon_0}{d}}$
 
-Gespeicherte Energie: $\boxed{W=\dfrac{Q^2}{2C}=\dfrac{CV^2}{2}=\dfrac{QV}{2}}$ \quad $\Delta W_{\text{Batt}}=\Delta QV$
+Gespeicherte Energie: $\boxed{\ec{W}=\dfrac{Q^2}{2C}=\dfrac{CV^2}{2}=\dfrac{QV}{2}}$ \quad $\Delta \ec{W}_{\text{Batt}}=\Delta QV$
 
-Energiedichte: $\boxed{w_E=\dfrac{1}{2\varepsilon_0}E^2}$
+Energiedichte: $\boxed{\ec{w_E}=\dfrac{1}{2\varepsilon_0}E^2}$
 
 Parallelschaltung: $\boxed{C_{\text{ges}}=\sum_i C_i}$ \quad Serienschaltung: $\boxed{C_{\text{ges}}=\dfrac{1}{\sum_i 1/C_i}}$
 
@@ -470,19 +453,19 @@ Parallelschaltung: $\boxed{C_{\text{ges}}=\sum_i C_i}$ \quad Serienschaltung: $\
 
 Stromstärke: $\boxed{I=\dfrac{Q}{dt}}$ \quad $I\propto\dfrac{1}{A}$
 
-Stromdichte: $\boxed{\mathbf{J}=nq\bar{v}=\rho v=\dfrac{I}{A}}$ \quad $\bar{v}$: mittlere Driftgeschwindigkeit, $\mathbf{J}\parallel d\mathbf{l}$
+Stromdichte: $\boxed{\vec{J}=nq\bar{v}=\rho v=\dfrac{I}{A}}$ \quad $\bar{v}$: mittlere Driftgeschwindigkeit, $\vec{J}\parallel d\vec{l}$
 
-Strom durch Fläche: $\boxed{I_A=\int_{\partial V}\mathbf{J}\,d\mathbf{a}}=JA$ \quad $[J]=\text{A/m}^2$
+Strom durch Fläche: $\boxed{I_A=\int_{\partial V}\vec{J}\,d\vec{a}}=JA$ \quad $[J]=\text{A/m}^2$
 
-Stromdichte versch. Teilchen: $\mathbf{J}=\sum_i n_i q_i\bar{v}_i$
+Stromdichte versch. Teilchen: $\vec{J}=\sum_i n_i q_i\bar{v}_i$
 
 \subsection{Ladungserhaltung}
 
-Kontinuitätsgleichung: $\boxed{\nabla\cdot\mathbf{J}=-\dfrac{d\rho}{dt}}$ \quad $\rho$: Ladungsdichte
+Kontinuitätsgleichung: $\boxed{\nabla\cdot\vec{J}=-\dfrac{d\rho}{dt}}$ \quad $\rho$: Ladungsdichte
 
 \subsection{Das Ohm'sche Gesetz}
 
-Allgemein: $\boxed{\mathbf{J}=\sigma\mathbf{E}}$ \quad $\sigma$: Leitfähigkeit
+Allgemein: $\boxed{\vec{J}=\sigma\vec{E}}$ \quad $\sigma$: Leitfähigkeit
 
 Widerstand: $\boxed{R=\dfrac{V}{I}=\int_{r_1}^{r_2}\dfrac{dr}{\sigma A(r)}}$
 
@@ -541,21 +524,19 @@ Eigenzeit: zeitartig $\Delta s^2>0$, raumartig $\Delta s^2<0$, lichtartig $\Delt
 
 \subsection{Energie, Impuls und Masse}
 
-Ruheenergie: $\boxed{E_0=mc^2}$
+Ruheenergie: $\boxed{\ec{E_0}=mc^2}$ \quad $\boxed{\ec{E_{\text{kin}}}=mc^2(\gamma-1)}$ \quad $\boxed{\ec{E_{\text{ges}}}=m\gamma c^2}$
 
-$\boxed{E_{\text{kin}}=mc^2(\gamma-1)}$ \quad $\boxed{E_{\text{ges}}=m\gamma c^2}$
+Vierergeschwindigkeit: $u^\mu=c\gamma\begin{pmatrix}1\\\vec{\beta}\end{pmatrix}$
 
-Vierergeschwindigkeit: $u^\mu=c\gamma\begin{pmatrix}1\\\boldsymbol{\beta}\end{pmatrix}$
-
-Impuls: $\boxed{\mathbf{p}=mv\gamma=\dfrac{mv}{\sqrt{1-\beta^2}}}$
+Impuls: $\boxed{\vec{p}=mv\gamma=\dfrac{mv}{\sqrt{1-\beta^2}}}$
 
 $p^2=\dfrac{E_{\text{ges}}^2}{c^2}-p^2=(mc)^2$
 
-Energie-Impuls Beziehung: $\boxed{E^2-p^2c^2=m^2c^4=E_0^2}$
+Energie-Impuls Beziehung: $\boxed{\ec{E}^2-p^2c^2=m^2c^4=\ec{E_0}^2}$
 
 $v=c\sqrt{1-\!\left(\dfrac{E_0}{E_{\text{ges}}}\right)^{\!2}}$ \quad $v=\dfrac{pc}{\sqrt{p^2+mc^2}}$
 
-Kraft: $m\gamma\mathbf{a}=\mathbf{F}-\dfrac{1}{c^2}(\mathbf{F}\cdot\mathbf{v})\mathbf{v}$
+Kraft: $m\gamma\vec{a}=\vec{F}-\dfrac{1}{c^2}(\vec{F}\cdot\vec{v})\vec{v}$
 
 \subsection{Dopplerefekt des Lichts}
 
@@ -572,11 +553,11 @@ $\dfrac{f_1}{f_2}=\dfrac{\lambda_2}{\lambda_1}$
 
 \subsection{Magnetische Kräfte}
 
-Lorentz-Kraft: $\boxed{\mathbf{F}=q\mathbf{E}+q(\mathbf{v}\times\mathbf{B})}$
+Lorentz-Kraft: $\boxed{\vec{F}=q\vec{E}+q(\vec{v}\times\vec{B})}$
 
-Stromdurchflossener Leiter: $\boxed{\mathbf{F}_L=I(\boldsymbol{\ell}\times\mathbf{B})}$
+Stromdurchflossener Leiter: $\boxed{\vec{F}_L=I(\vec{\ell}\times\vec{B})}$
 
-Ampersches Gesetz: $\boxed{\mu_0 I=\oint_{\partial A}\mathbf{B}\,ds}$
+Ampersches Gesetz: $\boxed{\mu_0 I=\oint_{\partial A}\vec{B}\,ds}$
 
 \bhbox{\textbf{Ladungsinvarianz:} $Q$ Lorentz-Skalar, relativistisch invariant, $Q=Q'$}
 
@@ -606,27 +587,27 @@ $F_y=\dfrac{qI}{2\pi\varepsilon_0 c^2}\dfrac{v}{d}$ \quad Magnetisches Feld: $\b
 
 \chbox{$\mu_0=\dfrac{1}{\varepsilon_0 c^2}=4\pi\times10^{-7}\,\text{N\,A}^{-2}$}
 
-Magn. Feld unendl. langer Draht: $\boxed{B=\mu_0\dfrac{I}{2\pi r}}$ \quad $\boxed{\mathbf{B}=\dfrac{\mathbf{k}}{\omega}\times\mathbf{E}}$
+Magn. Feld unendl. langer Draht: $\boxed{B=\mu_0\dfrac{I}{2\pi r}}$ \quad $\boxed{\vec{B}=\dfrac{\vec{k}}{\omega}\times\vec{E}}$
 
 Magnetfeld Zylinderspule: $\boxed{B=\mu_0\dfrac{N}{L}I}$ \quad $N$: Gesamtwindungen, $L$: Länge
 
 \subsection{Ampere'sches Gesetz}
 
-$\boxed{\oint_{\partial A}\mathbf{B}\,ds=\mu_0 I_{\text{eing}}=\mu_0\int_A\mathbf{J}\,d\mathbf{a}}$ \quad wähle Weg parallel zu $\mathbf{B}$
+$\boxed{\oint_{\partial A}\vec{B}\,ds=\mu_0 I_{\text{eing}}=\mu_0\int_A\vec{J}\,d\vec{a}}$ \quad wähle Weg parallel zu $\vec{B}$
 
-$\boxed{\nabla\times\mathbf{B}=\mu_0\mathbf{J}}$ \quad 2. Maxwell: $\boxed{\nabla\cdot\mathbf{B}=0}$
+$\boxed{\nabla\times\vec{B}=\mu_0\vec{J}}$ \quad 2. Maxwell: $\boxed{\nabla\cdot\vec{B}=0}$
 
 \subsection{Das Vektorpotential}
 
-$\boxed{\mathbf{B}=\nabla\times\mathbf{A}}$
+$\boxed{\vec{B}=\nabla\times\vec{A}}$
 
-$\boxed{\mathbf{A}(\mathbf{r})=\dfrac{\mu_0}{4\pi}\int_{\mathbb{R}^3}\dfrac{\mathbf{J}(\mathbf{r}')}{|\mathbf{r}-\mathbf{r}'|}dx'dy'dz'}$
+$\boxed{\vec{A}(\vec{r})=\dfrac{\mu_0}{4\pi}\int_{\mathbb{R}^3}\dfrac{\vec{J}(\vec{r}')}{|\vec{r}-\vec{r}'|}dx'dy'dz'}$
 
 \subsection{Das Biot-Savart'sche Gesetz}
 
-$\boxed{d\mathbf{B}=\dfrac{\mu_0 I}{4\pi r^2}(d\mathbf{l}\times\hat{r})=\dfrac{\mu_0 I}{4\pi r^3}|d\mathbf{l}\times\mathbf{r}|}$
+$\boxed{d\vec{B}=\dfrac{\mu_0 I}{4\pi r^2}(d\vec{l}\times\hat{r})=\dfrac{\mu_0 I}{4\pi r^3}|d\vec{l}\times\vec{r}|}$
 
-für Punktladung $q$: $\boxed{\mathbf{B}=\dfrac{\mu_0 q}{4\pi r^2}(\mathbf{v}\times\hat{r})}$
+für Punktladung $q$: $\boxed{\vec{B}=\dfrac{\mu_0 q}{4\pi r^2}(\vec{v}\times\hat{r})}$
 
 Magnetfeld unendlicher Spule: $\boxed{B_z=\mu_0 nI}$
 
@@ -645,21 +626,22 @@ El. Hall-Feld: $\boxed{E_H=\dfrac{U_H}{d}}$ \quad Hall Spannung: $\boxed{U_H=E_H
 
 \subsection{Relativistische Transformationen}
 
-$\boxed{E'_\parallel=E_\parallel}$ \quad $\boxed{E'_\perp=\gamma(E_\perp+c\boldsymbol{\beta}\times\mathbf{B}_\perp)}$
+$\boxed{E'_\parallel=E_\parallel}$ \quad $\boxed{E'_\perp=\gamma(E_\perp+c\vec{\beta}\times\vec{B}_\perp)}$
 
-$\boxed{B'_\parallel=B_\parallel}$ \quad $\boxed{B'_\perp=\gamma\!\left(B_\perp-\tfrac{1}{c}\boldsymbol{\beta}\times\mathbf{E}_\perp\right)}$
+$\boxed{B'_\parallel=B_\parallel}$ \quad $\boxed{B'_\perp=\gamma\!\left(B_\perp-\tfrac{1}{c}\vec{\beta}\times\vec{E}_\perp\right)}$
 
 % ============================================================
 \section{Magnetische Induktion}
 
 \subsection{Faraday'sches Gesetz}
 
-Isolierter Leiter: $\boxed{\mathbf{E}_{\text{int}}=-\mathbf{v}\times\mathbf{B}}$
+Isolierter Leiter: $\boxed{\vec{E}_{\text{int}}=-\vec{v}\times\vec{B}}$
 
-Magnetischer Fluss: $\boxed{\Phi(t)=\int_A\mathbf{B}\cdot d\mathbf{a}}$
+Magnetischer Fluss: $\boxed{\Phi(t)=\int_A\vec{B}\cdot d\vec{a}}$
 
-Induzierte Spannung:
-\[\boxed{\varepsilon=-\frac{d\Phi}{dt}=\oint_C\mathbf{E}\cdot d\mathbf{L}=-\frac{d}{dt}\int_A\mathbf{B}\cdot d\mathbf{a}}\]
+Induzierte Spannung: $\boxed{\varepsilon=-\frac{d\Phi}{dt}=\oint_C\vec{E}\cdot d\vec{L}=-\frac{d}{dt}\int_A\vec{B}\cdot d\vec{a}}$
+
+Induzierter Strom: $\boxed{I_{\text{ind}}=\dfrac{U_{\text{ind}}}{R}=\dfrac{\varepsilon}{R}=-\dfrac{1}{R}\dfrac{d\Phi}{dt}}$
 
 $\Phi$: Magnetischer Fluss, $\varepsilon$: elektromotorische Kraft $\approx$ Spannung
 
@@ -673,7 +655,7 @@ fallende Leiterschleife: $\boxed{F=I_{\text{ind}}aB}$ \quad $a$: Seitenlänge
 
 Gegeninduktivität: $\boxed{M_{21}=\dfrac{\Phi_{21}}{I_1}}$ \quad $[M]=H=\Omega s$
 
-$\dfrac{\Phi_{12}}{I_2}=\dfrac{\Phi_{21}}{I_1}$
+$\boxed{\dfrac{\Phi_{12}}{I_2}=\dfrac{\Phi_{21}}{I_1}}$
 
 Induzierte Spannung: $\boxed{\varepsilon_{21}=-M_{21}\dfrac{dI_1}{dt}}$ \quad (in Spule 2 durch Spule 1)
 
@@ -683,9 +665,11 @@ Induzierte Spannung: $\boxed{\varepsilon_{21}=-M_{21}\dfrac{dI_1}{dt}}$ \quad (i
 
 Induzierte Spannung: $\boxed{\varepsilon_{\text{ind}}=-L\dfrac{dI}{dt}}$
 
-Selbstinduktivität Spule: $\boxed{L=\mu_0\dfrac{AN^2}{l}}$ \quad $A$: Querschnittfläche, $N$: Windungen
+$\boxed{\Phi=NBA}$
 
-Gespeicherte Energie: $\boxed{U=\dfrac{1}{2}LI^2}$
+Selbstinduktivität Spule: $\boxed{L=\dfrac{\Phi}{I}=\mu_0\dfrac{AN^2}{l}}$ \quad $A$: Querschnittfläche, $N$: Windungen
+
+Gespeicherte Energie: $\boxed{\ec{U}=\dfrac{1}{2}LI^2}$
 
 % ============================================================
 \section{Wechselströme}
@@ -744,15 +728,15 @@ Amplitude: $I_A=U_0\cdot|Y|$ \quad Serienschaltung Spulen: $L_{\text{tot}}=L_1+L
 $z=|z|e^{i\alpha}$, $\alpha=\arctan(y/x)$ \quad $\lim_{\omega\to\infty}\arctan(\omega RC)=\pi/2$
 
 \renewcommand{\arraystretch}{1.2}
-\begin{tabular}{ccc}
-\toprule
+\begin{tabularx}{\linewidth}{|X|X|X|}
+\hline
 Komponente & Admittanz $Y$ & Impedanz $Z$ \\
-\midrule
+\hline
 $R$ & $\frac{1}{R}$ & $R$ \\
 $L$ & $-\frac{i}{\omega L}$ & $i\omega L$ \\
 $C$ & $i\omega C$ & $-\frac{i}{\omega C}=\frac{1}{i\omega C}$ \\
-\bottomrule
-\end{tabular}
+\hline
+\end{tabularx}
 
 Gesamtimpedanz $A\|B$: $Z_{A\|B}=\dfrac{Z_A Z_B}{Z_A+Z_B}$
 
@@ -775,46 +759,46 @@ $\boxed{\dfrac{I_P}{I_S}\approx\pm\dfrac{N_2}{N_1}\approx\dfrac{\hat{V}_S}{\hat{
 
 \subsection{Die Maxwellgleichungen}
 
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{@{}p{0.42\linewidth}p{0.55\linewidth}@{}}
-\toprule
+{\footnotesize\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{|X|X|}
+\hline
 Nabla-Form & Integralform \\
-\midrule
-$\nabla\cdot\mathbf{E}=\frac{\rho}{\varepsilon_0}$ & $\int_{\partial V}\mathbf{E}\cdot d\mathbf{a}=\frac{Q_{\text{in}}}{\varepsilon_0}$ \\
-$\nabla\cdot\mathbf{B}=0$ & $\int_{\partial V}\mathbf{B}\cdot d\mathbf{a}=0$ \\
-$\nabla\times\mathbf{E}=-\frac{\partial\mathbf{B}}{\partial t}$ & $\oint\mathbf{E}\cdot d\mathbf{s}=-\frac{\partial}{\partial t}\int_V\mathbf{B}\cdot d\mathbf{a}$ \\
-$\nabla\times\mathbf{B}=\mu_0\mathbf{J}+\mu_0\varepsilon_0\frac{\partial\mathbf{E}}{\partial t}$ & $\oint\mathbf{B}\cdot d\mathbf{s}=\mu_0 I_{\text{eing}}+\mu_0\varepsilon_0\frac{\partial}{\partial t}\int_V\mathbf{E}\cdot d\mathbf{a}$ \\
-$\nabla\cdot\mathbf{J}=-\frac{\partial\rho}{\partial t}$ & Kontinuitätsgleichung \\
-\bottomrule
-\end{tabular}
+\hline
+$\nabla\cdot\vec{E}=\frac{\rho}{\varepsilon_0}$ & $\int_{\partial V}\vec{E}\cdot d\vec{a}=\frac{Q_{\text{in}}}{\varepsilon_0}$ \\
+$\nabla\cdot\vec{B}=0$ & $\int_{\partial V}\vec{B}\cdot d\vec{a}=0$ \\
+$\nabla\times\vec{E}=-\frac{\partial\vec{B}}{\partial t}$ & $\oint\vec{E}\cdot d\vec{s}=-\frac{\partial}{\partial t}\int_V\vec{B}\cdot d\vec{a}$ \\
+$\nabla\times\vec{B}=\mu_0\vec{J}+\mu_0\varepsilon_0\frac{\partial\vec{E}}{\partial t}$ & $\oint\vec{B}\cdot d\vec{s}=\mu_0 I_{\text{eing}}+\mu_0\varepsilon_0\frac{\partial}{\partial t}\int_V\vec{E}\cdot d\vec{a}$ \\
+$\nabla\cdot\vec{J}=-\frac{\partial\rho}{\partial t}$ & Kontinuitätsgleichung \\
+\hline
+\end{tabularx}}
 
-falls $\mathbf{J}=0$: $\boxed{\nabla\times\mathbf{B}=\dfrac{1}{c^2}\dfrac{\partial\mathbf{E}}{\partial t}}$
+falls $\vec{J}=0$: $\boxed{\nabla\times\vec{B}=\dfrac{1}{c^2}\dfrac{\partial\vec{E}}{\partial t}}$
 
-Verschiebungsstrom: $\boxed{I_V=\int\varepsilon_0\dfrac{\partial\mathbf{E}}{\partial t}\,d\mathbf{a}}$
+Verschiebungsstrom: $\boxed{I_V=\int\varepsilon_0\dfrac{\partial\vec{E}}{\partial t}\,d\vec{a}}$
 
 \subsection{Homogene Wellengleichung}
 
-$\boxed{\Delta\mathbf{B}-\varepsilon_0\mu_0\dfrac{\partial^2\mathbf{B}}{\partial t^2}=0}$ \quad $\boxed{\Delta\mathbf{E}-\varepsilon_0\mu_0\dfrac{\partial^2\mathbf{E}}{\partial t^2}=0}$
+$\boxed{\Delta\vec{B}-\varepsilon_0\mu_0\dfrac{\partial^2\vec{B}}{\partial t^2}=0}$ \quad $\boxed{\Delta\vec{E}-\varepsilon_0\mu_0\dfrac{\partial^2\vec{E}}{\partial t^2}=0}$
 
 Ausbreitungsgeschwindigkeit: $\boxed{c:=v=\dfrac{1}{\sqrt{\varepsilon_0\mu_0}}=\dfrac{E_0}{B_0}}$
 
 \subsection{Energietransport}
 
-Poynting-Vektor: $\boxed{\mathbf{S}=\dfrac{1}{\mu_0}\mathbf{E}\times\mathbf{B}}$ \quad $|\mathbf{S}|=$ Intensität
+Poynting-Vektor: $\boxed{\vec{S}=\dfrac{1}{\mu_0}\vec{E}\times\vec{B}}$ \quad $|\vec{S}|=$ Intensität
 
-Momentaner Transport: $P=\int_A\dfrac{1}{\mu_0}(\mathbf{E}\times\mathbf{B})\,d\mathbf{a}$
+Momentaner Transport: $P=\int_A\dfrac{1}{\mu_0}(\vec{E}\times\vec{B})\,d\vec{a}$
 
-Poynting-Theorem: $\boxed{\dfrac{\partial(u_{\text{mech}}+u_{\text{em}})}{\partial t}+\nabla\cdot\mathbf{S}=0}$
+Poynting-Theorem: $\boxed{\dfrac{\partial(u_{\text{mech}}+u_{\text{em}})}{\partial t}+\nabla\cdot\vec{S}=0}$
 
 \subsection{Wellengleichung für Potentiale}
 
 $\boxed{\Delta\varphi-\varepsilon_0\mu_0\dfrac{\partial^2\varphi}{\partial t^2}=-\dfrac{\rho}{\varepsilon_0}}$
 
-$\boxed{\Delta\mathbf{A}-\varepsilon_0\mu_0\dfrac{\partial^2\mathbf{A}}{\partial t^2}=-\mu_0\mathbf{J}}$
+$\boxed{\Delta\vec{A}-\varepsilon_0\mu_0\dfrac{\partial^2\vec{A}}{\partial t^2}=-\mu_0\vec{J}}$
 
-$\varphi(\mathbf{r},t)=\dfrac{1}{4\pi\varepsilon_0}\int_{\mathbb{R}^3}\dfrac{\rho(\mathbf{r}',t-|\mathbf{r}-\mathbf{r}'|/c)}{|\mathbf{r}-\mathbf{r}'|}dV'$
+$\varphi(\vec{r},t)=\dfrac{1}{4\pi\varepsilon_0}\int_{\mathbb{R}^3}\dfrac{\rho(\vec{r}',t-|\vec{r}-\vec{r}'|/c)}{|\vec{r}-\vec{r}'|}dV'$
 
-$\mathbf{A}(\mathbf{r},t)=\dfrac{\mu_0}{4\pi}\int_{\mathbb{R}^3}\dfrac{\mathbf{J}(\mathbf{r}',t-|\mathbf{r}-\mathbf{r}'|/c)}{|\mathbf{r}-\mathbf{r}'|}dV'$
+$\vec{A}(\vec{r},t)=\dfrac{\mu_0}{4\pi}\int_{\mathbb{R}^3}\dfrac{\vec{J}(\vec{r}',t-|\vec{r}-\vec{r}'|/c)}{|\vec{r}-\vec{r}'|}dV'$
 
 \subsection{Hertzscher Dipol}
 
@@ -836,65 +820,90 @@ $\varepsilon=\dfrac{E_{\text{vak}}}{E_{\text{res}}}=1+\chi$ \quad relative Diele
 
 $\chi=\dfrac{P}{\varepsilon_0 E_{\text{res}}}$ \quad elektrische Suszeptibilität
 
-$\boxed{\mathbf{P}=N\mathbf{p}}$ \quad $\boxed{\mathbf{D}=\varepsilon_0\mathbf{E}+\mathbf{P}}$ \quad $\mathbf{P}=\varepsilon_0(\varepsilon-1)\mathbf{E}$
+$\boxed{\vec{P}=N\vec{p}}$ \quad $\boxed{\vec{D}=\varepsilon_0\vec{E}+\vec{P}}$ \quad $\vec{P}=\varepsilon_0(\varepsilon-1)\vec{E}$
 
-$\boxed{\nabla\cdot\mathbf{D}=\rho_{\text{frei}}}$ \quad $\nabla\cdot\mathbf{H}=\mathbf{J}_{\text{frei}}+\dfrac{\partial\mathbf{D}}{\partial t}$
+$\boxed{\nabla\cdot\vec{D}=\rho_{\text{frei}}}$ \quad $\nabla\cdot\vec{H}=\vec{J}_{\text{frei}}+\dfrac{\partial\vec{D}}{\partial t}$
 
-$\boxed{\rho_{\text{geb}}=-\nabla\cdot\mathbf{P}}$ \quad $\boxed{\mathbf{J}_{\text{geb}}=\dfrac{\partial\mathbf{P}}{\partial t}}$
+$\boxed{\rho_{\text{geb}}=-\nabla\cdot\vec{P}}$ \quad $\boxed{\vec{J}_{\text{geb}}=\dfrac{\partial\vec{P}}{\partial t}}$
 
 \subsection{Magnetisches Moment}
 
 \textbf{1. Stromschleife:}
-$\boxed{\boldsymbol{\mu}=I\cdot\mathbf{A}}$ \quad $|\boldsymbol{\mu}|=I\cdot A$
+$\boxed{\vec{\mu}=I\cdot\vec{A}}$ \quad $|\vec{\mu}|=I\cdot A$
 
-$\boldsymbol{\mu}$ steht senkrecht auf der Fläche $A$
+$\vec{\mu}$ steht senkrecht auf der Fläche $A$
 
 \textbf{2. Drehmoment im Magnetfeld:}
-$\boxed{\mathbf{M}=\boldsymbol{\mu}\times\mathbf{B}}$ \quad $|\mathbf{M}|=\mu B\sin\theta$ \quad $F_z=\mu\nabla_z B$
+$\boxed{\vec{M}=\vec{\mu}\times\vec{B}}$ \quad $|\vec{M}|=\mu B\sin\theta$ \quad $F_z=\mu\nabla_z B$
 
 \textbf{3. Potentielle Energie:}
-$\boxed{U=-\boldsymbol{\mu}\cdot\mathbf{B}=-\mu B\cos\theta}$
+$\boxed{U=-\vec{\mu}\cdot\vec{B}=-\mu B\cos\theta}$
 
 \textbf{Legende:}
 \begin{itemize}
-  \item $\boldsymbol{\mu},\mu$: Magnetisches Moment (Vektor/Betrag)
+  \item $\vec{\mu},\mu$: Magnetisches Moment (Vektor/Betrag)
   \item $I$: Stromstärke
-  \item $\mathbf{A},A$: Flächenvektor/Betrag der Schleife
-  \item $\mathbf{B}$: Magnetfeld; $\theta$: Winkel zwischen $\boldsymbol{\mu}$ und $\mathbf{B}$
+  \item $\vec{A},A$: Flächenvektor/Betrag der Schleife
+  \item $\vec{B}$: Magnetfeld; $\theta$: Winkel zwischen $\vec{\mu}$ und $\vec{B}$
   \item $e=1.602\times10^{-19}$ C; $m_e=9.109\times10^{-31}$ kg
   \item $\hbar$: Reduziertes Plancksches Wirkungsquantum
 \end{itemize}
 
+\end{multicols}
+\begin{multicols}{3}
 
 \subsection*{Wichtige Konstanten}
 
-\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{l|l|l}
-\toprule
-\textbf{Konstante} & \textbf{Symbol} & \textbf{Wert} \\
-\midrule
-Lichtgeschwindigkeit    & $c$         & $2.998\times10^{8}\,\text{m/s}$ \\
-Elektronenladung        & $e$         & $1.602\times10^{-19}\,\text{C}$ \\
-Elektronenmasse         & $m_e$       & $9.109\times10^{-31}\,\text{kg}$ \\
-Protonenmasse           & $m_p$       & $1.673\times10^{-27}\,\text{kg}$ \\
-El. Feldkonstante       & $\varepsilon_0$ & $8.854\times10^{-12}\,\text{As/Vm}$ \\
-Magn. Feldkonstante     & $\mu_0$     & $4\pi\times10^{-7}\,\text{N/A}^2$ \\
-Plancksches Wirkungsq.  & $h$         & $6.626\times10^{-34}\,\text{Js}$ \\
-Reduz. Plancksches W.   & $\hbar$     & $1.055\times10^{-34}\,\text{Js}$ \\
-Boltzmann-Konstante     & $k_B$       & $1.381\times10^{-23}\,\text{J/K}$ \\
-Gravitationskonstante   & $G$         & $6.674\times10^{-11}\,\text{m}^3\text{kg}^{-1}\text{s}^{-2}$ \\
-Avogadro-Konstante      & $N_A$       & $6.022\times10^{23}\,\text{mol}^{-1}$ \\
-Elektronenvolt          & $\text{eV}$ & $1.602\times10^{-19}\,\text{J}$ \\
-\bottomrule
-\end{tabular}
+{\footnotesize\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\linewidth}{|X|l|X|}
+\hline
+\textbf{Konstante} & \textbf{Sym.} & \textbf{Wert} \\
+\hline
+Lichtgeschw.      & $c$               & $3.00\times10^{8}\,\text{m/s}$ \\
+Elektronenladung  & $e$               & $1.602\times10^{-19}\,\text{C}$ \\
+Elektronenmasse   & $m_e$             & $9.109\times10^{-31}\,\text{kg}$ \\
+Protonenmasse     & $m_p$             & $1.673\times10^{-27}\,\text{kg}$ \\
+El. Feldkonst.    & $\varepsilon_0$   & $8.854\times10^{-12}\,\text{As/Vm}$ \\
+Magn. Feldkonst.  & $\mu_0$           & $4\pi\times10^{-7}\,\text{N/A}^2$ \\
+Planck             & $h$               & $6.626\times10^{-34}\,\text{Js}$ \\
+Planck (red.)      & $\hbar$           & $1.055\times10^{-34}\,\text{Js}$ \\
+Boltzmann         & $k_B$             & $1.381\times10^{-23}\,\text{J/K}$ \\
+Gravitation       & $G$               & $6.674\times10^{-11}\,\text{Nm}^2\text{kg}^{-2}$ \\
+Avogadro          & $N_A$             & $6.022\times10^{23}\,\text{mol}^{-1}$ \\
+Elektronenvolt    & $\text{eV}$       & $1.602\times10^{-19}\,\text{J}$ \\
+\hline
+\end{tabularx}}
+
+\subsection*{SI-Einheiten}
+
+{\footnotesize\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{|X|l|X|}
+\hline
+\textbf{Name} & \textbf{Sym.} & \textbf{Äquiv.} \\
+\hline
+Newton  & $N$            & $\text{kg\,m\,s}^{-2}$ \\
+Joule   & $J$            & $\text{N\,m}=\text{W\,s}$ \\
+Watt    & $W$            & $\text{J\,s}^{-1}$ \\
+Hertz   & $\text{Hz}$    & $\text{s}^{-1}$ \\
+Pascal  & $\text{Pa}$    & $\text{N\,m}^{-2}$ \\
+\hline
+Coulomb & $C$            & $\text{A\,s}$ \\
+Volt    & $V$            & $\text{J\,C}^{-1}$ \\
+Tesla   & $T$            & $\text{V\,s\,m}^{-2}$ \\
+Ohm     & $\Omega$       & $\text{V\,A}^{-1}$ \\
+Henry   & $H$            & $\text{V\,s\,A}^{-1}$ \\
+\hline
+eV      & $\text{eV}$    & $1.602\times10^{-19}\,\text{J}$ \\
+\hline
+\end{tabularx}}
 
 \subsection*{SI-Präfixe}
 
-\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{l|l|l}
-\toprule
+{\footnotesize\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\linewidth}{|X|l|l|}
+\hline
 \textbf{Präfix} & \textbf{Symbol} & \textbf{Faktor} \\
-\midrule
+\hline
 Tera  & T & $10^{12}$ \\
 Giga  & G & $10^{9}$  \\
 Mega  & M & $10^{6}$  \\
@@ -908,8 +917,8 @@ Mikro & $\mu$ & $10^{-6}$ \\
 Nano  & n & $10^{-9}$ \\
 Piko  & p & $10^{-12}$ \\
 Femto & f & $10^{-15}$ \\
-\bottomrule
-\end{tabular}
+\hline
+\end{tabularx}}
 
 \end{multicols}
 \end{document}
