@@ -387,22 +387,22 @@ wähle Fläche senkrecht zu $\efc{\vec{E}}$; \; $\efc{\vec{E}}\perp d\vec{a}$: $
 
 \textbf{Symmetrien} (Gaussfläche $\perp\efc{\vec{E}}$, $\efc{E}=\text{konst.}$):
 \par
-{\footnotesize\renewcommand{\arraystretch}{1.1}
-\begin{tabularx}{\linewidth}{|l|X|}
+{\footnotesize\renewcommand{\arraystretch}{1.45}
+\begin{tabularx}{\linewidth}{|l|X|X|}
 \hline
-\textbf{Geometrie} & \textbf{Ergebnis} \\
+\textbf{Geometrie} & \textbf{mit Ladung $q$} & \textbf{mit Dichte $\rho,\lambda,\sigma$} \\
 \hline
-Kugel (Pkt./Schale, aussen) & $\efc{E}=\tfrac{q}{4\pi\varepsilon_0 r^2}$ \\
-Vollkugel innen ($\rho$) & $\efc{E}=\tfrac{\rho r}{3\varepsilon_0}$ \\
-$\infty$ Zylinder ($\lambda$ C/m) & $\efc{E}=\tfrac{\lambda}{2\pi\varepsilon_0 r}$ \\
-$\infty$ Platte ($\sigma$ C/m$^2$) & $\efc{E}=\tfrac{\sigma}{2\varepsilon_0}$ \\
-Kondensator ($\pm\sigma$, innen) & $\efc{E}=\tfrac{\sigma}{\varepsilon_0}$ \\
+Kugel (Pkt./Schale, aussen) & $\efc{E}=\tfrac{q}{4\pi\varepsilon_0 r^2}$ & $\efc{E}=\tfrac{\sigma R^2}{\varepsilon_0 r^2}$ \\
+Vollkugel innen ($r<R$) & $\efc{E}=\tfrac{q r}{4\pi\varepsilon_0 R^3}$ & $\efc{E}=\tfrac{\rho r}{3\varepsilon_0}$ \\
+$\infty$ Zylinder (Länge $L$) & $\efc{E}=\tfrac{q}{2\pi\varepsilon_0 L r}$ & $\efc{E}=\tfrac{\lambda}{2\pi\varepsilon_0 r}$ \\
+$\infty$ Platte (Fläche $A$) & $\efc{E}=\tfrac{q}{2\varepsilon_0 A}$ & $\efc{E}=\tfrac{\sigma}{2\varepsilon_0}$ \\
+Kondensator ($\pm q$, innen) & $\efc{E}=\tfrac{q}{\varepsilon_0 A}$ & $\efc{E}=\tfrac{\sigma}{\varepsilon_0}$ \\
 \hline
 \end{tabularx}}
 
 \subsection{Energie des elektrischen Feldes}
 
-Energiedichte: $\boxed{\ec{u}=\dfrac{\varepsilon_0}{2}\efc{E}^2}$ \quad Gesamtenergie: $\boxed{\ec{U}=\int_V\dfrac{\varepsilon_0}{2}\efc{E}^2\,dV}$
+Energiedichte: $\boxed{\ec{u}=\dfrac{\varepsilon_0}{2}\efc{E}^2}$ \quad Gesamtenergie: $\boxed{\ec{U}=\int_V\dfrac{\varepsilon_0}{2}\efc{E}^2\,dV}$ $=\int_V \ec{u}\,dV$
 
 \subsection{Das elektrische Potential}
 
@@ -410,7 +410,7 @@ Spannung: $\boxed{V=\varphi=-\int_{r_0}^{r_1}\efc{\vec{E}}(\vec{r})\,dr}$
 
 Potentialdifferenz: $\varphi_{BA}=\varphi(A)-\varphi(B)=-\int_A^B\efc{\vec{E}}\,ds$
 
-$\varphi(r)=-\int_\infty^r \efc{E}(r')\,dr'+\varphi(\infty)$ \quad $\boxed{\efc{\vec{E}}=-\nabla\varphi}$
+$\varphi(r)=-\int_\infty^r \efc{E}(r')\,dr'+\varphi(\infty)$ \quad $\boxed{\efc{\vec{E}}=-\nabla\Phi}$ \quad $\nabla\Phi=\left(\tfrac{\partial\Phi}{\partial r},\;\tfrac{1}{r}\tfrac{\partial\Phi}{\partial\theta},\;\tfrac{1}{r\sin\theta}\tfrac{\partial\Phi}{\partial\varphi}\right)$
 
 $W_{BA}=\varphi_{BA}q$
 
@@ -437,9 +437,9 @@ $\boxed{\efc{\vec{E}}=\dfrac{\sigma}{\varepsilon_0}\hat{n}}$ \quad $\sigma=Q/A$
 
 \subsection{Spiegelladungen}
 
-Feld $xy$-Ebene: $\boxed{\efc{E_z}=\dfrac{-qh}{2\pi\varepsilon_0(r^2+h^2)^{3/2}}}$
+Feld $xy$-Ebene: $\boxed{\efc{E_z}=\dfrac{-qh}{2\pi\varepsilon_0(r^2+h^2)^{3/2}}}$ \quad $Q=\varphi\cdot V$
 
-Ladungsdichte: $\boxed{\sigma=\varepsilon_0 \efc{E_z}=\dfrac{-qh}{2\pi(r^2+h^2)^{3/2}}}$
+Ladungsdichte: $\boxed{\sigma=\varepsilon_0 \efc{E_z}=\dfrac{-qh}{2\pi(r^2+h^2)^{3/2}}}$ \quad $\icc{I}=\tfrac{dQ}{dt}=\tfrac{d}{dt}(\varphi\cdot V)$
 
 \subsection{Dipole}
 
@@ -453,13 +453,13 @@ Drehmoment: $\boxed{\vec{M}=\vec{p}\times\efc{\vec{E}}}$
 
 \subsection{Kondensatoren}
 
-Kapazität: $\boxed{Q=C\varphi=CV}$
+Kapazität: $\boxed{Q=C\varphi=CV}$ \quad Zylinderspule: $\boxed{C=\tfrac{2\pi\varepsilon_0 L}{\ln(R_A/R_I)}}$ \quad $\boxed{\ec{E}=\tfrac{1}{2}CV^2}$
 
 Plattenkondensator: $\boxed{\efc{E}=\dfrac{V}{d}=\dfrac{Q}{\varepsilon_0 A}}$ \quad $\boxed{C=\dfrac{A\varepsilon_0}{d}}$
 
 Gespeicherte Energie: $\boxed{\ec{W}=\dfrac{Q^2}{2C}=\dfrac{CV^2}{2}=\dfrac{QV}{2}}$ \quad $\Delta \ec{W}_{\text{Batt}}=\Delta QV$
 
-Energiedichte: $\boxed{\ec{w_E}=\dfrac{1}{2\varepsilon_0}\efc{E}^2}$
+Energiedichte: $\boxed{\ec{w_E}=\dfrac{1}{2\varepsilon_0}\efc{E}^2}$ \quad $\boxed{\ec{w_B}=\dfrac{\bfc{B}^2}{2\mu_0}}$ \quad $\ec{W}=\int_V \ec{w_E}\,dV$
 
 Parallelschaltung: $\boxed{C_{\text{ges}}=\sum_i C_i}$ \quad Serienschaltung: $\boxed{C_{\text{ges}}=\dfrac{1}{\sum_i 1/C_i}}$
 
@@ -472,7 +472,7 @@ Stromstärke: $\boxed{\icc{I}=\dfrac{Q}{dt}}$ \quad $\icc{I}\propto\dfrac{1}{A}$
 
 Stromdichte: $\boxed{\vec{J}=nq\bar{v}=\rho v=\dfrac{\icc{I}}{A}}$ \quad $\bar{v}$: mittlere Driftgeschwindigkeit, $\vec{J}\parallel d\vec{l}$
 
-Strom durch Fläche: $\boxed{\icc{I_A}=\int_{\partial V}\vec{J}\,d\vec{a}}=JA$ \quad $[J]=\text{A/m}^2$
+Strom durch Fläche: $\boxed{\icc{I_A}=\int_{\partial V}\vec{J}\,d\vec{a}=\oint_A\vec{J}\,d\vec{a}}=JA$ \quad $[J]=\text{A/m}^2$
 
 Stromdichte versch. Teilchen: $\vec{J}=\sum_i n_i q_i\bar{v}_i$
 
@@ -484,7 +484,7 @@ Kontinuitätsgleichung: $\boxed{\nabla\cdot\vec{J}=-\dfrac{d\rho}{dt}}$ \quad $\
 
 Allgemein: $\boxed{\vec{J}=\sigma\efc{\vec{E}}}$ \quad $\sigma$: Leitfähigkeit
 
-Widerstand: $\boxed{R=\dfrac{V}{\icc{I}}=\int_{r_1}^{r_2}\dfrac{dr}{\sigma A(r)}}$
+Widerstand: $\boxed{R=\dfrac{V}{\icc{I}}=\int_{r_1}^{r_2}\dfrac{dr}{\sigma A(r)}}$ \quad $\boxed{R=\dfrac{\rho L}{A}}$ \; $\rho=1/\sigma$: spez. Widerstand
 
 Parallelschaltung: $\boxed{\dfrac{1}{R_{\text{ges}}}=\sum_i\dfrac{1}{R_i}}$ \quad Serienschaltung: $\boxed{R_{\text{ges}}=\sum_i R_i}$
 
@@ -610,7 +610,7 @@ $K$ Labor: $F_\parallel=q\efc{E_\parallel}$ \quad $F_\perp=\dfrac{1}{\gamma}F'_\
 
 \subsection{Wechselwirkungen zwischen bewegten Ladungen}
 
-$F_y=\dfrac{qI}{2\pi\varepsilon_0 c^2}\dfrac{v}{d}$ \quad Magnetisches Feld: $\boxed{\bfc{B}=\dfrac{\icc{I}}{2\pi\varepsilon_0 c^2 d}}$
+$F_y=\dfrac{q\icc{I}}{2\pi\varepsilon_0 c^2}\dfrac{v}{d}=\dfrac{\mu_0 q\icc{I}}{2\pi}\dfrac{v}{d}$ \quad Magnetisches Feld: $\boxed{\bfc{B}=\dfrac{\icc{I}}{2\pi\varepsilon_0 c^2 d}}$ $\Rightarrow$ $\boxed{\dfrac{F}{l}=\dfrac{\mu_0 \icc{I}^2}{2\pi d}}$
 
 % ============================================================
 \section{Magnetische Felder}
@@ -638,13 +638,27 @@ Toroid ($N$ Wdg) & $\bfc{B}=\tfrac{\mu_0 N\icc{I}}{2\pi r}$ (innen), $0$ (aussen
 \hline
 \end{tabularx}}
 
-$\boxed{\nabla\times\bfc{\vec{B}}=\mu_0\vec{J}}$ \quad 2. Maxwell: $\boxed{\nabla\cdot\bfc{\vec{B}}=0}$
+$\boxed{\nabla\times\bfc{\vec{B}}=\mu_0\vec{J}}$ \quad 2. Maxwell: $\boxed{\nabla\cdot\bfc{\vec{B}}=0}$ \quad Ring: $\boxed{d\bfc{B}=\dfrac{\mu_0\,d\icc{I}}{2r}}$
 
 \subsection{Das Vektorpotential}
 
+\noindent
+\begin{minipage}[t]{0.44\linewidth}
 $\boxed{\bfc{\vec{B}}=\nabla\times\vec{A}}$
 
+\medskip
 $\boxed{\vec{A}(\vec{r})=\dfrac{\mu_0}{4\pi}\int_{\mathbb{R}^3}\dfrac{\vec{J}(\vec{r}')}{|\vec{r}-\vec{r}'|}dx'dy'dz'}$
+\end{minipage}\hfill
+\begin{minipage}[t]{0.53\linewidth}
+{\footnotesize
+\textbf{Hilfsintegral:}\\[3pt]
+$\begin{aligned}
+\int_{-\infty}^{\infty}\frac{r}{(r^2+z^2)^{3/2}}\,dz
+&=2\int_{0}^{\infty}\frac{r}{(r^2+z^2)^{3/2}}\,dz\\[2pt]
+&=2\left[\frac{z}{r\sqrt{r^2+z^2}}\right]_{0}^{\infty}=2\cdot\frac{1}{r}=\frac{2}{r}
+\end{aligned}$
+}
+\end{minipage}
 
 \subsection{Das Biot-Savart'sche Gesetz}
 
@@ -652,12 +666,10 @@ $\boxed{d\bfc{\vec{B}}=\dfrac{\mu_0 \icc{I}}{4\pi r^2}(d\vec{l}\times\hat{r})=\d
 
 für Punktladung $q$: $\boxed{\bfc{\vec{B}}=\dfrac{\mu_0 q}{4\pi r^2}(\vec{v}\times\hat{r})}$
 
-Magnetfeld unendlicher Spule: $\boxed{\bfc{B_z}=\mu_0 nI}$
+Magnetfeld unendlicher Spule: $\boxed{\bfc{B_z}=\mu_0 n\icc{I}}$ \quad $\infty$ dünner Leiter: $\bfc{B}=\mu_0\dfrac{\icc{I}}{2\pi R}$
 
 Kreisförmiger Leiter auf $z$-Achse:
-$\bfc{B_z}(0,0,z)=\dfrac{\mu_0 R^2 I}{2(R^2+z^2)^{3/2}}$ \quad insbes.: $\bfc{B_z}(0,0,0)=\dfrac{\mu_0 \icc{I}}{2R}$
-
-Unendlich langer dünner Leiter: $\bfc{B}=\mu_0\dfrac{\icc{I}}{2\pi R}$
+$\bfc{B_z}(0,0,z)=\dfrac{\mu_0 R^2 \icc{I}}{2(R^2+z^2)^{3/2}}$ \quad $\bfc{B_z}(0,0,0)=\dfrac{\mu_0 \icc{I}}{2R}$
 
 \subsection{Energiedichte des magnetischen Feldes}
 
@@ -665,7 +677,7 @@ $\boxed{u_B=\dfrac{\bfc{B}^2}{2\mu_0}}$
 
 \subsection{Hall Effekt}
 
-El. Hall-Feld: $\boxed{\efc{E_H}=\dfrac{U_H}{d}}$ \quad Hall Spannung: $\boxed{U_H=\efc{E_H} d=\bar{v}\bfc{B}d}$
+El. Hall-Feld: $\boxed{\efc{E_H}=\dfrac{U_H}{d}}$ \quad Hall Spannung: $\boxed{U_H=\efc{E_H} d=\bar{v}\bfc{B}d}$ $=\int\efc{\vec{E}}\,ds$
 
 \subsection{Relativistische Transformationen}
 
@@ -680,7 +692,7 @@ $\boxed{\bfc{B'_\parallel}=\bfc{B_\parallel}}$ \quad $\boxed{\bfc{B'_\perp}=\gam
 
 Isolierter Leiter: $\boxed{\efc{\vec{E}_{\text{int}}}=-\vec{v}\times\bfc{\vec{B}}}$
 
-Magnetischer Fluss: $\boxed{\Phi(t)=\int_A\bfc{\vec{B}}\cdot d\vec{a}}$
+Magnetischer Fluss: $\boxed{\Phi(t)=\int_A\bfc{\vec{B}}\cdot d\vec{a}=\oint_A\bfc{\vec{B}}\cdot d\vec{a}}$
 
 Induzierte Spannung: $\boxed{\varepsilon=-\frac{d\Phi}{dt}=\oint_C\efc{\vec{E}}\cdot d\vec{L}=-\frac{d}{dt}\int_A\bfc{\vec{B}}\cdot d\vec{a}}$
 
@@ -688,7 +700,7 @@ Induzierter Strom: $\boxed{\icc{I_{\text{ind}}}=\dfrac{U_{\text{ind}}}{R}=\dfrac
 
 $\Phi$: Magnetischer Fluss, $\varepsilon$: elektromotorische Kraft $\approx$ Spannung
 
-fallende Leiterschleife: $\boxed{F=\icc{I_{\text{ind}}}a\bfc{B}}$ \quad $a$: Seitenlänge
+fallende Leiterschleife: $\boxed{F=\icc{I_{\text{ind}}}a\bfc{B}}$ \quad $\boxed{dF=d\icc{I}\,a\,\bfc{B}}$ \quad $a$: Seitenlänge
 
 \subsection{Lenz'sche Gesetz}
 
@@ -696,7 +708,7 @@ fallende Leiterschleife: $\boxed{F=\icc{I_{\text{ind}}}a\bfc{B}}$ \quad $a$: Sei
 
 \subsection{Gegenseitige Induktivität}
 
-Gegeninduktivität: $\boxed{M_{21}=\dfrac{\Phi_{21}}{\icc{I_1}}}$ \quad $[M]=H=\Omega s$
+Gegeninduktivität: $\boxed{M_{21}=\dfrac{\Phi_{21}}{\icc{I_1}}}$ \quad $[M]=H=\Omega s=\text{Vs}/\text{A}$
 
 $\boxed{\dfrac{\Phi_{12}}{\icc{I_2}}=\dfrac{\Phi_{21}}{\icc{I_1}}}$
 
@@ -706,13 +718,13 @@ Induzierte Spannung: $\boxed{\varepsilon_{21}=-M_{21}\dfrac{\icc{dI_1}}{dt}}$ \q
 
 \subsection{Selbstinduktivität}
 
-Induzierte Spannung: $\boxed{\varepsilon_{\text{ind}}=-L\dfrac{\icc{dI}}{dt}}$
+Induzierte Spannung: $\boxed{\varepsilon_{\text{ind}}=-L\dfrac{\icc{dI}}{dt}}$ \quad $[L]=1H=\Omega s=\text{Vs}/\text{A}$
 
 $\boxed{\Phi=NBA}$
 
 Selbstinduktivität Spule: $\boxed{L=\dfrac{\Phi}{\icc{I}}=\mu_0\dfrac{AN^2}{l}}$ \quad $A$: Querschnittfläche, $N$: Windungen
 
-Gespeicherte Energie: $\boxed{\ec{U}=\dfrac{1}{2}LI^2}$
+Gespeicherte Energie: $\boxed{\ec{U}=\dfrac{1}{2}L\icc{I}^2}$ $=\dfrac{1}{2\mu_0}V_{\text{olume}}\bfc{B}^2$ \quad $\ec{U_N}=\dfrac{\ec{U}}{V_{\text{olume}}}=\dfrac{1}{2\mu_0}\bfc{B}^2$
 
 % ============================================================
 \section{Wechselströme}
